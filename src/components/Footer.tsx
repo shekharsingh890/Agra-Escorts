@@ -14,15 +14,15 @@ const Footer = () => {
       <div className="mx-auto max-w-7xl px-6 py-14">
         <div className="grid gap-10 md:grid-cols-3 lg:grid-cols-4">
           <div>
-            <NavLink to="/" className="flex items-center gap-2">
-              <span className="bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] bg-clip-text text-2xl font-semibold text-transparent">Aerocity</span>
-              <span className="text-2xl font-semibold text-[#f5f3eb]/80">Escorts</span>
+            <NavLink to="/" className="flex items-center gap-2 font-serif">
+              <span className="bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] bg-clip-text text-2xl font-normal text-transparent">Aerocity</span>
+              <span className="text-2xl font-normal text-[#f5f3eb]/80">Escorts</span>
             </NavLink>
             <p className="mt-4 text-sm leading-7 text-[#b8b2a7]">Elite, discreet luxury companionship for discerning gentlemen in Aerocity, Delhi.</p>
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-widest text-[#d4b54c]">Explore</h4>
+            <h4 className="text-sm font-serif font-normal uppercase tracking-widest text-[#d4b54c]">Explore</h4>
             <div className="mt-4 flex flex-col gap-2 text-sm">
               {navItems.map((n) => (
                 <NavLink key={n.to} to={n.to} className="text-[#b8b2a7] transition-colors duration-300 hover:text-[#d4b54c]">
@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-widest text-[#d4b54c]">Legal</h4>
+            <h4 className="text-sm font-serif font-normal uppercase tracking-widest text-[#d4b54c]">Legal</h4>
             <div className="mt-4 flex flex-col gap-2 text-sm">
               <NavLink to="/privacy-policy" className="text-[#b8b2a7] transition-colors duration-300 hover:text-[#d4b54c]">
                 Privacy Policy
@@ -45,7 +45,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-widest text-[#d4b54c]">Contact</h4>
+            <h4 className="text-sm font-serif font-normal uppercase tracking-widest text-[#d4b54c]">Contact</h4>
             <div className="mt-4 flex flex-col gap-2 text-sm text-[#b8b2a7]">
               <span>Aerocity, New Delhi</span>
               <span>Available 24 / 7</span>

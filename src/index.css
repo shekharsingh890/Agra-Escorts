@@ -9,6 +9,13 @@ html {
 
   color: white;
   background-color: #0b0907;
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(61, 50, 27, 0.16), transparent 45%),
+    radial-gradient(circle at 35% 45%, rgba(71, 51, 19, 0.08), transparent 55%),
+    linear-gradient(90deg, rgba(30,22,12,.55) 0%, rgba(11,9,7,0) 35%),
+    linear-gradient(180deg, rgba(255,255,255,.015) 0%, transparent 35%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

@@ -25,9 +25,9 @@ const Header = () => {
   return (
     <div className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 text-black/10 ${scrolled ? "bg-[#1f1d1b]/80 backdrop-blur-xl border-b border-[#514d45]/30 py-3" : "py-5"}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
-        <NavLink to="/" className="flex items-center gap-2" onClick={() => setMenuOpen(false)}>
-          <span className="bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] bg-clip-text text-2xl font-semibold text-transparent">Aerocity</span>
-          <span className="text-2xl font-semibold text-[#f5f3eb]/80">Escorts</span>
+        <NavLink to="/" className="flex font-serif items-center gap-2" onClick={() => setMenuOpen(false)}>
+          <span className="bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] bg-clip-text text-2xl font-normal text-transparent">Aerocity</span>
+          <span className="text-2xl font-normal text-[#f5f3eb]/80">Escorts</span>
         </NavLink>
 
         <div className="hidden items-center gap-8 md:flex">
