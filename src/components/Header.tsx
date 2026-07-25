@@ -1,66 +1,87 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
-  { to: "/", label: "Home" },
-  { to: "/about-us", label: "About" },
-  { to: "/companions", label: "Companions" },
-  { to: "/services", label: "Services" },
-  { to: "/rates", label: "Rates" },
-  { to: "/contact", label: "Contact" },
+  { path: "/", label: "Home" },
+  { path: "/about-us", label: "About" },
+  { path: "/companions", label: "Companions" },
+  { path: "/services", label: "Services" },
+  { path: "/rates", label: "Rates" },
+  { path: "/contact", label: "Contact" },
 ];
 
 const Header = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [scrolled, setScrolled] = useState<boolean>(false);
+
+  const navClass = ({ isActive }: { isActive: boolean }) => isActive ? "w-full lg:w-fit font-medium hover:text-[#D9C27B]" : "w-full lg:w-fit hover:text-[#D9C27B]";
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 80);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
-    <div className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 text-black/10 ${scrolled ? "bg-[#1f1d1b]/80 backdrop-blur-xl border-b border-[#514d45]/30 py-3" : "py-5"}`}>
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
-        <NavLink to="/" className="flex font-serif items-center gap-2" onClick={() => setMenuOpen(false)}>
-          <span className="bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] bg-clip-text text-2xl font-normal text-transparent">Aerocity</span>
-          <span className="text-2xl font-normal text-[#f5f3eb]/80">Escorts</span>
-        </NavLink>
+    <nav className={`fixed top-0 left-0 right-0 z-50 p-4 md:px-8 flex items-center justify-between gap-4 border-b border-transparent transition duration-300 ${scrolled ? "bg-black/50 backdrop-blur-xl border-[#D9C27B]/30!" : "bg-transparent"}`}>
+      <NavLink to="/" className="flex items-center gap-2 font-serif">
+        <span className="bg-[linear-gradient(135deg,#E9D7A6,#C79A43,#8D6A3A)] bg-clip-text text-transparent text-2xl font-medium">Aerocity</span>
+        <span className="text-2xl font-medium text-white/80">Escorts</span>
+      </NavLink>
 
-        <div className="hidden items-center gap-8 md:flex">
-          {navItems.map((n) => (
-            <NavLink key={n.to} to={n.to} end={n.to === "/"} className={({ isActive }) => `text-sm tracking-wide transition-colors hover:text-[#d4b54c] ${isActive ? "text-[#d4b54c]" : "text-[#f5f3eb]/80"}`}>
-              {n.label}
-            </NavLink>
-          ))}
-          <NavLink to="/contact" className="rounded-full bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] px-5 py-2.5 text-sm font-medium text-[#1f1d1b] transition-all duration-300 hover:scale-105 hover:shadow-[0_10px_30px_rgba(212,181,76,0.35)]">
-            Book Now
+      <div className="hidden lg:flex items-center gap-8">
+        {navItems.map((item) => (
+          <NavLink key={item.path} to={item.path} className={navClass}>
+            {item.label}
           </NavLink>
-        </div>
-
-        <button aria-label="Menu" onClick={() => setMenuOpen(!menuOpen)} className="text-[#d4b54c] md:hidden">
-          {menuOpen ? <X /> : <Menu />}
-        </button>
+        ))}
+        <NavLink to="/contact" className="rounded-full bg-[linear-gradient(135deg,#E9D7A6,#C79A43,#8D6A3A)] px-6 py-3 text-sm text-black font-semibold transition-all duration-300 hover:scale-105">
+          Book Now
+        </NavLink>
       </div>
 
-      {menuOpen && (
-        <div className="mx-6 mt-3 animate-fade-in rounded-2xl border border-[#514d45]/30 bg-[#1f1d1b]/90 p-4 backdrop-blur-xl md:hidden">
-          <div className="flex flex-col gap-1">
-            {navItems.map((n) => (
-              <NavLink key={n.to} to={n.to} onClick={() => setMenuOpen(false)} className="rounded-lg px-4 py-3 text-sm text-[#f5f3eb] transition-colors hover:bg-[#d4b54c]/10">
-                {n.label}
+      <button onClick={()=>setMenuOpen(!menuOpen)} className="lg:hidden text-[#D9C27B]" aria-label="Open navigation menu">
+        {menuOpen ? <X /> : <Menu />}
+      </button>
+
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-xl border-b border-[#D9C27B]/30 p-6 flex flex-col gap-8"
+            initial={{ y: -400 }}
+            animate={{ y: 0 }}
+            exit={{ y: -400 }}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+          >
+            <div className="flex justify-between gap-4">
+              <NavLink to="/" className="flex items-center gap-2 font-serif">
+                <span className="bg-[linear-gradient(135deg,#E9D7A6,#C79A43,#8D6A3A)] bg-clip-text text-transparent text-2xl font-medium">Aerocity</span>
+                <span className="text-2xl font-medium text-white/80">Escorts</span>
               </NavLink>
-            ))}
-            <NavLink to="/contact" onClick={() => setMenuOpen(false)} className="mt-2 rounded-full bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] px-5 py-3 text-center text-sm font-medium text-[#1f1d1b] transition-all duration-300 hover:scale-105 hover:shadow-[0_10px_30px_rgba(212,181,76,0.35)]">
-              Book Now
-            </NavLink>
-          </div>
-        </div>
-      )}
-    </div>
+              <X className="cursor-pointer" onClick={()=>setMenuOpen(false)}/>
+            </div>
+
+            <div className="flex flex-col gap-8">
+              {navItems.map((item) => (
+                <NavLink key={item.path} to={item.path} onClick={()=>setMenuOpen(false)} className={navClass}>
+                  {item.label}
+                </NavLink>
+              ))}
+              <NavLink to="/contact" className="w-full rounded-full bg-[linear-gradient(135deg,#E9D7A6,#C79A43,#8D6A3A)] px-6 py-3 text-sm text-center text-black font-semibold transition-all duration-300 hover:scale-105">
+                Book Now
+              </NavLink>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
   )
 }
 

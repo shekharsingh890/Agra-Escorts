@@ -1,6 +1,6 @@
 import './App.css'
 import { Routes, Route, Navigate } from 'react-router-dom'
-import Hero from './pages/Hero'
+import Home from './pages/Home'
 import { lazy, Suspense } from 'react'
 
 const Header = lazy(() => import('./components/Header'))
@@ -23,12 +23,12 @@ function App() {
         <ScrollToTop />
 
         <Routes>
-          <Route path='/' element={<Hero />}/>
+          <Route path='/' element={<Home />}/>
           <Route path='/about-us' element={<AboutUs />}/>
-          <Route path='/contact' element={<Contact />}/>
           <Route path='/companions' element={<Companions />}/>
           <Route path='/services' element={<Services />}/>
           <Route path='/rates' element={<Rates />}/>
+          <Route path='/contact' element={<Contact />}/>
           <Route path='/privacy-policy' element={<PrivacyPolicy />}/>
           <Route path='/terms-and-conditions' element={<TermsAndConditions />}/>
           
