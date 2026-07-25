@@ -21,7 +21,7 @@ const BackToTopButton = () => {
   };
 
   return (
-    <button onClick={scrollToTop} className={`fixed bottom-6 right-3 md:right-6 z-50 p-1 rounded-xl shadow-xl text-white bg-[linear-gradient(135deg,oklch(0.74_0.17_55),oklch(0.65_0.2_35))] hover:scale-105 border border-white transition-all duration-300 ${visible ? "opacity-100 scale-100" : "opacity-0 scale-75 pointer-events-none"}`}>
+    <button onClick={scrollToTop} className={`fixed bottom-6 right-3 md:right-6 z-50 p-1 rounded-xl shadow-xl text-black bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] hover:scale-105 border border-black transition-all duration-300 ${visible ? "opacity-100 scale-100" : "opacity-0 scale-75 pointer-events-none"}`}>
       <KeyboardArrowUp />
     </button>
   );
