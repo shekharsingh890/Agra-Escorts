@@ -5,14 +5,46 @@ import { Helmet } from "react-helmet-async";
 const Hero = lazy(()=>import("../section/Hero"));
 
 const services = [
-  { icon: "🍷", title: "Dinner Date", desc: "Sophisticated dining companionship at Delhi's finest restaurants and hotel suites." },
-  { icon: "💼", title: "Corporate Companion", desc: "Poised, articulate partners for board dinners, conferences and business galas." },
-  { icon: "✈", title: "Travel Companion", desc: "Domestic and international travel companions for weekend getaways and long trips." },
-  { icon: "🥂", title: "Party Companion", desc: "Charismatic company for private parties, celebrations and social gatherings." },
-  { icon: "🎭", title: "Event Escort", desc: "Elegant escorts for red-carpet events, weddings and cultural evenings." },
-  { icon: "♛", title: "VIP Companion", desc: "Bespoke concierge experience for our most distinguished clientele." },
-  { icon: "🌙", title: "Weekend Companion", desc: "Extended weekend engagements at luxury resorts and city retreats." },
-  { icon: "🌍", title: "International Companion", desc: "Multilingual companions available for international assignments worldwide." },
+  {
+    icon: "🇷🇺",
+    title: "Russian Escorts",
+    desc: "Elegant international companions available for social events, dinner dates, travel, and premium companionship."
+  },
+  {
+    icon: "🎓",
+    title: "College Girls",
+    desc: "Young, confident companions for casual outings, coffee dates, shopping, and entertainment events."
+  },
+  {
+    icon: "✨",
+    title: "Model Escorts",
+    desc: "Fashionable and sophisticated companions ideal for luxury events, parties, corporate gatherings, and exclusive occasions."
+  },
+  {
+    icon: "💎",
+    title: "Housewife Escorts",
+    desc: "Mature, graceful companions offering refined company for dinners, social engagements, and relaxed evenings."
+  },
+  {
+    icon: "🚗",
+    title: "VIP Outcall",
+    desc: "Premium companion visits to your hotel, residence, or preferred location with professionalism and discretion."
+  },
+  {
+    icon: "🏨",
+    title: "Incall Service",
+    desc: "Private appointments hosted at a comfortable and discreet location for a premium companionship experience."
+  },
+  {
+    icon: "🍷",
+    title: "Dinner Date",
+    desc: "Enjoy refined company at fine-dining restaurants, luxury hotels, and memorable evening outings."
+  },
+  {
+    icon: "🌙",
+    title: "Weekend Companion",
+    desc: "Extended companionship for weekend getaways, staycations, city escapes, and leisure travel."
+  },
 ];
 
 const Services = () => {

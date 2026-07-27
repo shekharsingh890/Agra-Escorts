@@ -42,17 +42,37 @@ const contactInfo = [
 
 const faqs = [
   {
+    q: "How can I book Aerocity Escorts?",
+    a: "You can book by calling or WhatsApp on +91 9999999999. Just tell us your preferred time, hotel name, and girl choice. Booking confirmed within 5-10 minutes."
+  },
+  {
     q: "How quickly can you arrange a booking?",
     a: "Same-hour bookings are usually possible for our regular clientele. Standard notice is 2 hours."
   },
   {
-    q: "Do you accommodate special requests?",
-    a: "Yes, our concierge team is happy to arrange bespoke experiences."
+    q: "Do you provide real photos and verified girls?",
+    a: "Yes, all our girls are 100% verified with recent genuine photos. We never use fake or stolen images."
   },
   {
     q: "What areas do you cover?",
     a: "Aerocity, all of Delhi NCR, Gurgaon, Noida and travel worldwide on request."
-  }
+  },
+  {
+    q: "Is complete privacy guaranteed?",
+    a: "100% Privacy Guaranteed. We maintain full confidentiality. No details are shared with anyone. Your identity is completely safe."
+  },
+  {
+    q: "What is the difference between Incall and Outcall?",
+    a: "Incall: You visit our girl's place (mostly 5-star hotels in Aerocity). Outcall: Girl comes to your hotel or residence."
+  },
+  {
+    q: "Do you have Russian and Foreign Escorts?",
+    a: "Yes, we have beautiful Russian, Ukrainian, and other foreign escorts available regularly in Aerocity."
+  },
+  {
+    q: "What if I want to cancel the booking?",
+    a: "You can cancel 2 hours before the meeting without any charge. Last minute cancellation may have 50% charge."
+  },
 ];
 
 const Contact = () => {

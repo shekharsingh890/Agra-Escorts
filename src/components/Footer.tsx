@@ -48,7 +48,7 @@ const Footer = () => {
           <div className="flex flex-col gap-2 opacity-70 break-all">
             <span>Aerocity, New Delhi</span>
             <span>Available 24 / 7</span>
-            <a href="mailto:booking@aerocityescorts.example" className="w-fit transition-colors duration-300 hover:text-[#f1ba4b] wrap-break-word">booking@aerocityescorts.example</a>
+            <a href="mailto:booking@aerocity.com" className="w-fit transition-colors duration-300 hover:text-[#f1ba4b] wrap-break-word">booking@aerocity.com</a>
           </div>
         </div>
       </div>

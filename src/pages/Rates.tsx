@@ -5,10 +5,10 @@ import { NavLink } from "react-router-dom";
 const Hero = lazy(()=>import("../section/Hero"));
 
 const packages = [
-  { name: "Basic", duration: "2 Hours", features: ["Verified companion", "Dinner or drinks", "In-city meet", "Complete privacy"], popular: false },
-  { name: "Premium", duration: "4 Hours", features: ["Curated selection", "Fine dining", "Personal concierge", "Priority booking"], popular: false },
-  { name: "VIP", duration: "Full Evening", features: ["Top-tier companion", "5-star venue", "Champagne service", "Dedicated concierge", "Chauffeured transfers"], popular: true },
-  { name: "Elite", duration: "Overnight / 24h", features: ["Model-tier companion", "Suite reservation", "Bespoke itinerary", "Priority everything", "Multi-day extensions"], popular: false },
+  { name: "Basic", duration: "2 Hours", features: ["Single Shot", "Sexy Talk", "Blowjob & Handjob"], popular: false },
+  { name: "Premium", duration: "4 Hours", features: ["Curated selection", "Sexy Talk", "Blowjob & Handjob", "Lip Kiss", "Girlfriend Experience"], popular: false },
+  { name: "VIP", duration: "Full Evening", features: ["Top-tier companion", "Sexy Talk", "Blowjob & Handjob", "Lip Kiss", "Girlfriend Experience", "Cum in Mouth"], popular: true },
+  { name: "Elite", duration: "Overnight / 24h", features: ["Model-tier companion", "Sexy Talk", "Blowjob & Handjob", "Lip Kiss", "Girlfriend Experience", "Cum in Mouth", "Anal Play"], popular: false },
 ];
 
 const process = [
