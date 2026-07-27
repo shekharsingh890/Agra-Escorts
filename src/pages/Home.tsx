@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom"
 import hero from "../assets/hero.jpg"
-import Heading from "../section/Heading";
+import Heading from "../section/Hero";
 import * as Icons from '../assets/companions'
 import { useState } from "react";
 

@@ -10,54 +10,53 @@ const navItems = [
 
 const Footer = () => {
   return (
-    <div className="mt-20 border-t border-[#d4b54c]/15 bg-[#070503] backdrop-blur-xl">
-      <div className="mx-auto max-w-7xl px-6 py-14">
-        <div className="grid gap-10 md:grid-cols-3 lg:grid-cols-4">
-          <div>
-            <NavLink to="/" className="flex items-center gap-2 font-serif">
-              <span className="bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] bg-clip-text text-2xl font-normal text-transparent">Aerocity</span>
-              <span className="text-2xl font-normal text-[#f5f3eb]/80">Escorts</span>
-            </NavLink>
-            <p className="mt-4 text-sm leading-7 text-[#b8b2a7]">Elite, discreet luxury companionship for discerning gentlemen in Aerocity, Delhi.</p>
-          </div>
+    <footer className="border-t border-[#f1ba4b]/30 bg-[#090707]">
+      <div className="p-8 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-16">
+        <div className="flex flex-col gap-4 md:col-span-3 lg:col-span-2">
+          <NavLink to="/" className="flex items-center gap-2 font-serif text-2xl font-medium">
+            <span className="bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] bg-clip-text text-transparent">Aerocity</span>
+            <span className="text-white/80">Escorts</span>
+          </NavLink>
+          <p className="leading-relaxed opacity-80">Elite, discreet luxury companionship for discerning gentlemen in Aerocity, Delhi.</p>
+        </div>
 
-          <div>
-            <h4 className="text-sm font-serif font-normal uppercase tracking-widest text-[#d4b54c]">Explore</h4>
-            <div className="mt-4 flex flex-col gap-2 text-sm">
-              {navItems.map((n) => (
-                <NavLink key={n.to} to={n.to} className="text-[#b8b2a7] transition-colors duration-300 hover:text-[#d4b54c]">
-                  {n.label}
-                </NavLink>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-serif font-normal uppercase tracking-widest text-[#d4b54c]">Legal</h4>
-            <div className="mt-4 flex flex-col gap-2 text-sm">
-              <NavLink to="/privacy-policy" className="text-[#b8b2a7] transition-colors duration-300 hover:text-[#d4b54c]">
-                Privacy Policy
+        <div className="flex flex-col gap-3">
+          <h3 className="font-serif uppercase text-[#f1ba4b]">Explore</h3>
+          <div className="flex flex-col gap-2 opacity-70">
+            {navItems.map((n) => (
+              <NavLink key={n.to} to={n.to} className="w-fit transition-colors duration-300 hover:text-[#f1ba4b]">
+                {n.label}
               </NavLink>
-              <NavLink to="/terms-and-conditions" className="text-[#b8b2a7] transition-colors duration-300 hover:text-[#d4b54c]">
-                Terms & Conditions
-              </NavLink>
-            </div>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-serif font-normal uppercase tracking-widest text-[#d4b54c]">Contact</h4>
-            <div className="mt-4 flex flex-col gap-2 text-sm text-[#b8b2a7]">
-              <span>Aerocity, New Delhi</span>
-              <span>Available 24 / 7</span>
-              <span>booking@aerocityescorts.example</span>
-            </div>
+            ))}
           </div>
         </div>
 
-        <div className="my-10 h-px w-full bg-linear-to-r from-transparent via-[#d4b54c]/50 to-transparent" />
-        <p className="text-center text-xs text-[#b8b2a7]">© {new Date().getFullYear()} Aerocity Escorts. All rights reserved. Adults 18+ only.</p>
+        <div className="flex flex-col gap-3">
+          <h3 className="font-serif uppercase text-[#f1ba4b]">Legal</h3>
+          <div className="flex flex-col gap-2 opacity-70">
+            <NavLink to="/privacy-policy" className="w-fit transition-colors duration-300 hover:text-[#f1ba4b]">
+              Privacy Policy
+            </NavLink>
+            <NavLink to="/terms-and-conditions" className="w-fit transition-colors duration-300 hover:text-[#f1ba4b]">
+              Terms & Conditions
+            </NavLink>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-3">
+          <h3 className="font-serif uppercase text-[#f1ba4b]">Contact</h3>
+          <div className="flex flex-col gap-2 opacity-70 break-all">
+            <span>Aerocity, New Delhi</span>
+            <span>Available 24 / 7</span>
+            <a href="mailto:booking@aerocityescorts.example" className="w-fit transition-colors duration-300 hover:text-[#f1ba4b] wrap-break-word">booking@aerocityescorts.example</a>
+          </div>
+        </div>
       </div>
-    </div>
+
+      <div className="h-px w-full bg-linear-to-r from-transparent via-[#f1ba4b]/50 to-transparent" />
+
+      <p className="text-center text-xs text-white/80 px-4 md:px-20 py-6">© {new Date().getFullYear()} Aerocity Escorts. All rights reserved. Adults 18+ only.</p>
+    </footer>
   );
 };
 

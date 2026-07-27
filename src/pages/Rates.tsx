@@ -1,103 +1,116 @@
-import Heading from "../section/Heading";
+import { lazy } from "react";
+import { Helmet } from "react-helmet-async";
 import { NavLink } from "react-router-dom";
 
+const Hero = lazy(()=>import("../section/Hero"));
+
 const packages = [
-  { name: "Basic", duration: "2 Hours", features: ["Verified companion", "Dinner or drinks", "In-city meet", "Complete privacy"], featured: false },
-  { name: "Premium", duration: "4 Hours", features: ["Curated selection", "Fine dining", "Personal concierge", "Priority booking"], featured: false },
-  { name: "VIP", duration: "Full Evening", features: ["Top-tier companion", "5-star venue", "Champagne service", "Dedicated concierge", "Chauffeured transfers"], featured: true },
-  { name: "Elite", duration: "Overnight / 24h", features: ["Model-tier companion", "Suite reservation", "Bespoke itinerary", "Priority everything", "Multi-day extensions"], featured: false },
+  { name: "Basic", duration: "2 Hours", features: ["Verified companion", "Dinner or drinks", "In-city meet", "Complete privacy"], popular: false },
+  { name: "Premium", duration: "4 Hours", features: ["Curated selection", "Fine dining", "Personal concierge", "Priority booking"], popular: false },
+  { name: "VIP", duration: "Full Evening", features: ["Top-tier companion", "5-star venue", "Champagne service", "Dedicated concierge", "Chauffeured transfers"], popular: true },
+  { name: "Elite", duration: "Overnight / 24h", features: ["Model-tier companion", "Suite reservation", "Bespoke itinerary", "Priority everything", "Multi-day extensions"], popular: false },
 ];
 
 const process = [
-  { n: "01", t: "Enquire", d: "Contact us via form, phone or WhatsApp." },
-  { n: "02", t: "Curate", d: "We propose companions matched to your preferences." },
-  { n: "03", t: "Confirm", d: "Confirm date, venue and package details." },
-  { n: "04", t: "Enjoy", d: "Meet your companion at the agreed location." },
+  { n: "01", title: "Enquire", desc: "Contact us via form, phone or WhatsApp." },
+  { n: "02", title: "Curate", desc: "We propose companions matched to your preferences." },
+  { n: "03", title: "Confirm", desc: "Confirm date, venue and package details." },
+  { n: "04", title: "Enjoy", desc: "Meet your companion at the agreed location." },
 ];
 
 const Rates = () => {
   return (
     <>
-      <section className="mx-auto max-w-7xl px-6 py-8 pt-38">
-        <Heading badge="Investment"
-          title={
-            <>
-              Transparent{" "}
-              <span className="bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] bg-clip-text italic text-transparent">
-                packages
-              </span>
-            </>
-          } subtitle="Every package reflects our commitment to five-star service. Custom arrangements available on request."
-        />
-      </section>
+      <Helmet>
+        <title>Rates | Areocity Escorts</title>
 
-      <section className="mx-auto grid max-w-7xl gap-6 px-6 md:grid-cols-2 xl:grid-cols-4">
+        <meta name="description" content="View our pricing plans and service packages. Choose the option that best fits your needs." />
+        <meta name="keywords" content="Call girls in delhi, Escorts service in delhi, Call girls in aerocity delhi, Escorts service in aerocity Delhi" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        {/* <link rel="canonical" href="https://yourdomain.com/rates" /> */}
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Rates | Areocity Escorts" />
+        <meta property="og:description" content="Explore our pricing plans and service packages." />
+        {/* <meta property="og:url" content="https://yourdomain.com/rates" /> */}
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Rates | Areocity Escorts" />
+        <meta name="twitter:description" content="Browse our pricing plans and packages." />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "EntertainmentBusiness",
+            name: "Aerocity Escorts",
+            // url: "https://yourdomain.com",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Aerocity",
+              addressRegion: "Delhi",
+              addressCountry: "IN"
+            }
+          })}
+        </script>
+      </Helmet>
+
+      <Hero badge="Investment" title1="Transparent" title2="packages" description="Every package reflects our commitment to five-star service. Custom arrangements available on request." />
+
+      <section className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6 pt-12 lg:pt-24 px-4 lg:px-16">
         {packages.map((p) => (
-          <div key={p.name} className={`relative rounded-3xl border border-[#514d45]/30 bg-[#130e0b] p-8 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#d4b54c]/40 hover:shadow-[0_20px_60px_-20px_rgba(212,181,76,0.2)] ${p.featured ? "ring-2 ring-[#d4b54c]" : "" }`}>
-            {p.featured ? (
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] px-4 py-1 text-[10px] font-medium uppercase tracking-widest text-[#1f1d1b]">
-                Most Popular
-              </span>
-            ) : null}
+          <div key={p.name} className={`relative flex flex-col gap-6 rounded-3xl bg-[#13100d] border border-[#f1ba4b]/30 p-8 transition duration-300 hover:-translate-y-1 hover:border-[#f1ba4b]/80 ${p.popular ? "ring-2 ring-[#f1ba4b]" : "" }`}>
+            {p.popular && (
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] px-4 py-1 text-[10px] font-medium uppercase tracking-widest text-black">Most Popular</span>
+            )}
 
-            <h3 className="text-3xl font-serif font-normal text-[#f5f3eb]">{p.name}</h3>
-            <p className="mt-1 text-sm text-[#d4b54c]">{p.duration}</p>
+            <div className="space-y-2">
+              <h2 className="text-3xl font-normal font-serif">{p.name}</h2>
+              <p className="text-sm text-[#f1ba4b]">{p.duration}</p>
+            </div>
 
-            <div className="my-6 h-px w-full bg-linear-to-r from-transparent via-[#d4b54c]/50 to-transparent" />
+            <div className="h-px w-full bg-linear-to-r from-transparent via-[#f1ba4b]/50 to-transparent" />
 
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-2 text-sm">
               {p.features.map((f) => (
-                <li key={f} className="flex items-start gap-3">
-                  <span className="mt-0.5 text-[#d4b54c]">✓</span>
-                  <span className="leading-6 text-[#b8b2a7]">{f}</span>
+                <li key={f} className="flex items-start gap-2">
+                  <span className="text-[#f1ba4b]">✓</span>
+                  <span className="opacity-70">{f}</span>
                 </li>
               ))}
             </ul>
 
-            <NavLink to="/contact" className={`mt-8 block rounded-full px-5 py-3 text-center text-xs font-medium uppercase tracking-widest transition-all duration-300 ${p.featured ? "bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] text-[#1f1d1b] hover:scale-105 hover:shadow-[0_10px_30px_rgba(212,181,76,0.35)]" : "border border-[#d4b54c] text-[#d4b54c] hover:bg-[#d4b54c] hover:text-[#1f1d1b]"}`}>
+            <NavLink to="/contact" className={`mt-4 rounded-full px-6 py-3 text-center text-xs font-semibold uppercase tracking-widest transition-all duration-300 ${p.popular ? "bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] text-black hover:scale-105" : "border border-[#f1ba4b] text-[#f1ba4b] hover:bg-[#f1ba4b] hover:text-black"}`}>
               Book {p.name}
             </NavLink>
 
-            <p className="mt-4 text-center text-xs text-[#b8b2a7]">Pricing on enquiry</p>
+            <p className="text-center text-xs opacity-70">Pricing on enquiry</p>
           </div>
         ))}
       </section>
 
-      <section className="mx-auto mt-24 max-w-7xl px-6 py-20 md:py-28">
-        <Heading badge="Booking process"
-          title={
-            <>
-              Simple. Discreet.{" "}
-              <span className="bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] bg-clip-text italic text-transparent">
-                Elegant.
-              </span>
-            </>
-          } subtitle="" />
+      <Hero badge="Booking process" title1="Simple. Discreet." title2="Elegant." description="" />
 
-        <div className="grid gap-6 md:grid-cols-4">
-          {process.map((s) => (
-            <div key={s.n} className="rounded-3xl border border-[#514d45]/30 bg-[#130e0b] p-8 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#d4b54c]/40 hover:shadow-[0_20px_60px_-20px_rgba(212,181,76,0.2)]">
-              <div className="bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] bg-clip-text text-4xl font-normal text-transparent font-serif">
-                {s.n}
-              </div>
-
-              <h3 className="mt-4 font-serif text-xl font-normal text-[#f5f3eb]">{s.t}</h3>
-              <p className="mt-2 text-sm leading-7 text-[#b8b2a7]">{s.d}</p>
+      <section className="max-w-7xl mx-auto grid md:grid-cols-4 gap-6 pt-12 lg:pt-24 px-4 lg:px-16">
+        {process.map((s) => (
+          <div key={s.n} className="flex flex-col gap-6 rounded-3xl bg-[#13100d] border border-[#f1ba4b]/30 p-8 transition duration-300 hover:-translate-y-1 hover:border-[#f1ba4b]/80">
+            <h2 className="text-3xl font-normal font-serif bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] bg-clip-text text-transparent">{s.n}</h2>
+            <div className="flex flex-col gap-2">
+              <h3 className="font-serif text-lg">{s.title}</h3>
+              <p className="text-sm leading-6 opacity-70">{s.desc}</p>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-6 px-6 md:grid-cols-2">
-        <div className="rounded-3xl border border-[#514d45]/30 bg-[#130e0b] p-10 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#d4b54c]/40 hover:shadow-[0_20px_60px_-20px_rgba(212,181,76,0.2)]">
-          <h3 className="text-2xl font-serif font-normal text-[#f5f3eb]">Payment Methods</h3>
-
-          <p className="mt-3 text-sm leading-7 text-[#b8b2a7]">We accept cash, UPI, secure bank transfers and select international payment options. Payment terms are confirmed at booking.</p>
+      <section className="max-w-7xl mx-auto grid md:grid-cols-2 gap-6 py-12 lg:py-24 px-4 lg:px-16">
+        <div className="flex flex-col gap-3 rounded-3xl bg-[#13100d] border border-[#f1ba4b]/30 p-8 transition duration-300 hover:-translate-y-1 hover:border-[#f1ba4b]/80">
+          <h3 className="text-2xl font-normal font-serif">Payment Methods</h3>
+          <p className="text-sm leading-6 opacity-70">We accept cash, UPI, secure bank transfers and select international payment options. Payment terms are confirmed at booking.</p>
         </div>
 
-        <div className="rounded-3xl border border-[#514d45]/30 bg-[#130e0b] p-10 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#d4b54c]/40 hover:shadow-[0_20px_60px_-20px_rgba(212,181,76,0.2)]">
-          <h3 className="text-2xl font-serif font-normal text-[#f5f3eb]">Privacy Notice</h3>
-          <p className="mt-3 text-sm leading-7 text-[#b8b2a7]">All bookings are protected by strict confidentiality. No personal details are ever shared, stored longer than necessary, or used for marketing.</p>
+        <div className="flex flex-col gap-3 rounded-3xl bg-[#13100d] border border-[#f1ba4b]/30 p-8 transition duration-300 hover:-translate-y-1 hover:border-[#f1ba4b]/80">
+          <h3 className="text-2xl font-normal font-serif">Privacy Notice</h3>
+          <p className="text-sm leading-6 opacity-70">All bookings are protected by strict confidentiality. No personal details are ever shared, stored longer than necessary, or used for marketing.</p>
         </div>
       </section>
     </>

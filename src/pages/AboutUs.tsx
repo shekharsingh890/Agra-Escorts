@@ -1,4 +1,4 @@
-import Heading from '../section/Heading'
+import Heading from '../section/Hero'
 import About from '../assets/about.jpg'
 import { NavLink } from 'react-router-dom';
 

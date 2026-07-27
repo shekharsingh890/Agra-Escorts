@@ -1,4 +1,4 @@
-import Heading from "../section/Heading";
+import Heading from "../section/Hero";
 
 const policy = [
   { t: "Information Collection", d: "We collect only the information you voluntarily provide through our contact forms, phone calls or messaging channels — typically name, phone number, email, preferred date and service enquiry details. We do not collect sensitive personal data beyond what is necessary to arrange your booking." },

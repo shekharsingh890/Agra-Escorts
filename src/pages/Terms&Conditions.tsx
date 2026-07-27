@@ -1,4 +1,4 @@
-import Heading from "../section/Heading"
+import Heading from "../section/Hero"
 
 const terms = [
   { t: "Acceptance", d: "By accessing this website or engaging our services, you confirm you are at least 18 years old and agree to be bound by these terms." },

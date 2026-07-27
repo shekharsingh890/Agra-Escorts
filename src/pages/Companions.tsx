@@ -1,4 +1,4 @@
-import Heading from "../section/Heading"
+import Heading from "../section/Hero"
 import * as Icons from '../assets/companions'
 import { useState } from "react"
 import { NavLink } from "react-router-dom"
