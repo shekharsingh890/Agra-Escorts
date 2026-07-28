@@ -11,7 +11,7 @@ const navItems = [
 const Footer = () => {
   return (
     <footer className="border-t border-[#f1ba4b]/30 bg-[#090707]">
-      <div className="p-8 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-16">
+      <div className="p-8 md:p-12 lg:p-16 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12 lg:gap-16">
         <div className="flex flex-col gap-4 md:col-span-3 lg:col-span-2">
           <NavLink to="/" className="flex items-center gap-2 font-serif text-2xl font-medium">
             <span className="bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] bg-clip-text text-transparent">Aerocity</span>

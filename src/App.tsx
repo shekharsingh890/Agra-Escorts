@@ -5,6 +5,7 @@ import { lazy, Suspense } from 'react'
 
 const Header = lazy(() => import('./components/Header'))
 const Footer = lazy(() => import('./components/Footer'))
+const SocialLinks = lazy(() => import('./components/SocialLinks'))
 const ScrollToTop = lazy(() => import('./components/ScrollToTop'))
 const BackToTopButton = lazy(() => import('./components/BackToTopButton'))
 const AboutUs = lazy(() => import('./pages/AboutUs'))
@@ -35,6 +36,7 @@ function App() {
           <Route path='*' element={<Navigate to='/'/>}/>
         </Routes>
 
+        <SocialLinks />
         <BackToTopButton />
         <Footer />
       </Suspense>

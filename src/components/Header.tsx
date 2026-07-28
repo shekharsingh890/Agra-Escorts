@@ -16,7 +16,7 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
 
-  const navClass = ({ isActive }: { isActive: boolean }) => isActive ? "w-full lg:w-fit font-medium hover:text-[#f1ba4b]" : "w-full lg:w-fit hover:text-[#f1ba4b]";
+  const navClass = ({ isActive }: { isActive: boolean }) => isActive ? "w-full lg:w-fit font-medium text-[#f1ba4b]" : "w-full lg:w-fit hover:text-[#f1ba4b]";
 
   useEffect(() => {
     const handleScroll = () => {
