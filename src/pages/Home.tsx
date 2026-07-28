@@ -1,9 +1,8 @@
 import { NavLink } from "react-router-dom"
 import hero from "../assets/hero.jpg"
-import Heading from "../section/Hero";
 import * as Icons from '../assets/companions'
-import { useState } from "react";
 import Faqs from "../section/Faqs";
+import Hero from "../section/Hero";
 
 const reasons = [
   { icon: "★", title: "Professional Companions", text: "Carefully selected, sophisticated companions with impeccable etiquette." },
@@ -38,9 +37,7 @@ const faqs = [
   { q: "What payment methods do you accept?", a: "We accept cash, UPI, bank transfer and international payments." },
 ];
 
-const Hero = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-  
+const Home = () => {
   return (
     <>
       <section className="relative flex min-h-[95vh] items-center justify-center overflow-hidden">
@@ -50,20 +47,20 @@ const Hero = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(212,181,76,0.25),transparent_40%)]" />
 
         <div className="relative z-10 mx-auto max-w-5xl px-6 pt-20 text-center">
-          <p className="mb-6 animate-fade-in text-xs uppercase tracking-[0.4em] text-[#d4b54c] font-serif">Elite Luxury Companionship</p>
+          <p className="mb-6 animate-fade-in text-xs uppercase tracking-[0.4em] text-[#f1ba4b] font-serif">Elite Luxury Companionship</p>
           <h1 className="animate-fade-in text-5xl leading-[1.05] md:text-7xl lg:text-8xl font-serif">
             Premium{" "}
-            <span className="bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] bg-clip-text italic text-transparent">Aerocity</span>
+            <span className="bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] bg-clip-text italic text-transparent">Aerocity</span>
             <br />
             Escorts
           </h1>
-          <p className="mx-auto mt-8 max-w-2xl animate-fade-in text-lg text-[#f5f3eb]/80 md:text-xl">Luxury Companionship & Elite Escort Services in Aerocity, Delhi. Discreet. Verified. Unforgettable.</p>
+          <p className="mx-auto pt-8 max-w-2xl animate-fade-in text-lg opacity-80 md:text-xl">Luxury Companionship & Elite Escort Services in Aerocity, Delhi. Discreet. Verified. Unforgettable.</p>
 
           <div className="mt-10 flex flex-wrap justify-center gap-4 animate-fade-in">
-            <NavLink to="/companions" className="rounded-full bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] px-8 py-4 text-sm font-medium uppercase tracking-widest text-[#1f1d1b] transition-all duration-300 hover:scale-105 hover:shadow-[0_10px_30px_rgba(212,181,76,0.35)]">
+            <NavLink to="/companions" className="rounded-full bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] px-8 py-4 text-sm font-medium uppercase tracking-widest text-[#13100d] transition-all duration-300 hover:scale-105 hover:shadow-[0_10px_30px_rgba(212,181,76,0.35)]">
               View Profiles
             </NavLink>
-            <NavLink to="/contact" className="rounded-full border border-[#d4b54c] px-8 py-4 text-sm font-medium uppercase tracking-widest text-[#d4b54c] transition-all duration-300 hover:bg-[#d4b54c] hover:text-[#1f1d1b]">
+            <NavLink to="/contact" className="rounded-full border border-[#d4b54c] px-8 py-4 text-sm font-medium uppercase tracking-widest text-[#f1ba4b] transition-all duration-300 hover:bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] hover:text-[#13100d]">
               Contact Now
             </NavLink>
           </div>
@@ -71,71 +68,53 @@ const Hero = () => {
       </section>
 
       {/* why choose us */}
-      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
-        <Heading badge="Why Choose Us"
-          title={
-            <>
-              The{" "}
-              <span className="bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] bg-clip-text italic text-transparent">
-                gold standard
-              </span>{" "}
-              in companionship
-            </>
-          } subtitle="Six reasons discerning gentlemen choose Aerocity Escorts."
-        />
+      <Hero badge="Why Choose Us" title1="The" title2="gold standard" title3="in companionship" description="Six reasons discerning gentlemen choose Aerocity Escorts." />
 
+      <section className="mx-auto max-w-7xl px-4 lg:px-16 pt-12 md:pt-24">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {reasons.map((r) => (
-            <div key={r.title} className="rounded-3xl border border-[#514d45]/30 bg-[#2a2825] p-8 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#d4b54c]/40 hover:shadow-[0_20px_60px_-20px_rgba(212,181,76,0.2)]">
-              <div className="mb-4 grid h-12 w-12 place-items-center rounded-xl border border-[#d4b54c]/30 text-xl text-[#d4b54c]">{r.icon}</div>
-              <h3 className="text-xl font-serif font-semibold text-[#f5f3eb]">{r.title}</h3>
-              <p className="mt-2 text-sm leading-7 text-[#b8b2a7]">{r.text}</p>
+            <div key={r.title} className="rounded-3xl border border-[#f1ba4b]/30 bg-[#13100d] p-8 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#f1ba4b]/40 hover:shadow-[0_20px_60px_-20px_rgba(212,181,76,0.2)]">
+              <div className="space-y-3">
+                <div className="grid h-12 w-12 place-items-center rounded-xl border border-[#f1ba4b]/30 text-xl text-[#f1ba4b]">{r.icon}</div>
+                <h3 className="text-lg font-serif font-semibold opacity-80">{r.title}</h3>
+                <p className="text-sm leading-7 opacity-80">{r.text}</p>
+              </div>
             </div>
           ))}
         </div>
       </section>
 
       {/* featured companions */}
-      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
-        <Heading badge="Featured Companions"
-          title={
-            <>
-              Meet our{" "}
-              <span className="bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] bg-clip-text italic text-transparent">
-                elite
-              </span>{" "}
-              companions
-            </>
-          } subtitle="A curated selection of our most sought-after companions."
-        />
+      <Hero badge="Featured Companions" title1="Meet our" title2="elite" title3="companions" description="A curated selection of our most sought-after companions." />
 
+      <section className="mx-auto max-w-7xl px-4 lg:px-16 pt-12 md:pt-24">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {featured.map((p) => (
-            <div key={p.id} className="group overflow-hidden rounded-3xl border border-[#514d45]/30 bg-[#130e0b] shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#d4b54c]/40 hover:shadow-[0_20px_60px_-20px_rgba(212,181,76,0.2)]">
+            <div key={p.id} className="group overflow-hidden rounded-3xl border border-[#f1ba4b]/30 bg-[#13100d] shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#f1ba4b]/40 hover:shadow-[0_20px_60px_-20px_rgba(212,181,76,0.2)]">
               <div className="relative aspect-4/5 overflow-hidden">
                 <img src={p.image} alt={p.name} loading="lazy" width={800} height={1000} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"/>
 
                 <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent" />
 
                 <div className="absolute bottom-0 p-6">
-                  <h3 className="text-2xl font-serif font-normal text-[#f5f3eb]">{p.name}</h3>
-                  <p className="text-sm text-[#d4b54c]">{p.age} yrs · {p.city}</p>
+                  <h3 className="text-2xl font-serif font-normal opacity-80">{p.name}</h3>
+                  <p className="text-sm text-[#f1ba4b]">{p.age} yrs · {p.city}</p>
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-2 p-6 text-xs text-[#b8b2a7]">
+              <div className="grid grid-cols-2 gap-2 p-6 text-xs">
                 <div>
                   Height:{" "}
-                  <span className="text-[#f5f3eb]">{p.height}</span>
+                  <span className="opacity-80">{p.height}</span>
                 </div>
                 <div>
                   Languages:{" "}
-                  <span className="text-[#f5f3eb]">{p.languages}</span>
+                  <span className="opacity-80">{p.languages}</span>
                 </div>
               </div>
 
               <div className="p-6 pt-0">
-                <NavLink to="/companions" className="block rounded-full border border-[#d4b54c] px-5 py-3 text-center text-xs font-medium uppercase tracking-widest text-[#d4b54c] transition-all duration-300 hover:bg-[#d4b54c] hover:text-[#1f1d1b]">
+                <NavLink to="/companions" className="block rounded-full border border-[#f1ba4b] px-5 py-3 text-center text-xs font-medium uppercase tracking-widest text-[#f1ba4b] transition-all duration-300 hover:bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] hover:text-[#13100d]">
                   View Profile
                 </NavLink>
               </div>
@@ -145,53 +124,35 @@ const Hero = () => {
       </section>
 
       {/* services */}
-      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
-        <Heading badge="Our Services"
-          title={
-            <>
-              A companion for every{" "}
-              <span className="bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] bg-clip-text italic text-transparent">
-                occasion
-              </span>
-            </>
-          } subtitle="From intimate dinners to international travel."
-        />
+      <Hero badge="Our Services" title1="A companion for every" title2="occasion" title3="" description="From intimate dinners to international travel." />
 
+      <section className="mx-auto max-w-7xl px-4 lg:px-16 pt-12 md:pt-24">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => (
-            <div key={s} className="flex items-center justify-between rounded-3xl border border-[#514d45]/30 bg-[#130e0b] p-6 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#d4b54c]/40 hover:shadow-[0_20px_60px_-20px_rgba(212,181,76,0.2)] font-serif">
-              <span className="text-xl font-normal text-[#f5f3eb]">{s}</span>
-              <span className="text-xl text-[#d4b54c] transition-transform duration-300 group-hover:translate-x-1">→</span>
+            <div key={s} className="flex items-center justify-between rounded-3xl border border-[#f1ba4b]/30 bg-[#13100d] p-6 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#f1ba4b]/40 hover:shadow-[0_20px_60px_-20px_rgba(212,181,76,0.2)] font-serif">
+              <span className="text-xl font-normal opacity-80">{s}</span>
+              <span className="text-xl text-[#f1ba4b] transition-transform duration-300 group-hover:translate-x-1">→</span>
             </div>
           ))}
         </div>
 
         <div className="mt-10 text-center">
-          <NavLink to="/services" className="inline-block rounded-full border border-[#d4b54c] px-8 py-3 text-sm font-medium uppercase tracking-widest text-[#d4b54c] transition-all duration-300 hover:bg-[#d4b54c] hover:text-[#1f1d1b]">
+          <NavLink to="/services" className="inline-block rounded-full border border-[#f1ba4b] px-8 py-3 text-sm font-medium uppercase tracking-widest text-[#f1ba4b] transition-all duration-300 hover:bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] hover:text-[#13100d]">
             All Services
           </NavLink>
         </div>
       </section>
 
       {/* testimonials */}
-      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
-        <Heading badge="Testimonials"
-          title={
-            <>
-              Words from our{" "}
-              <span className="bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] bg-clip-text italic text-transparent">
-                clients
-              </span>
-            </>
-          } subtitle=""
-        />
+      <Hero badge="Testimonials" title1="Words from our" title2="clients" title3="" description="" />
 
+      <section className="mx-auto max-w-7xl px-4 lg:px-16 pt-12 md:pt-24">
         <div className="grid gap-6 md:grid-cols-3">
           {testimonials.map((t) => (
-            <div key={t.name} className="rounded-3xl border border-[#514d45]/30 bg-[#130e0b] p-8 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#d4b54c]/40 hover:shadow-[0_20px_60px_-20px_rgba(212,181,76,0.2)]">
-              <div className="mb-4 text-[#d4b54c]">★★★★★</div>
-              <p className="text-lg italic leading-8 text-[#f5f3eb]">"{t.text}"</p>
-              <div className="mt-4 text-xs uppercase tracking-widest text-[#b8b2a7]">
+            <div key={t.name} className="rounded-3xl border border-[#f1ba4b]/30 bg-[#13100d] p-8 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#f1ba4b]/40 hover:shadow-[0_20px_60px_-20px_rgba(212,181,76,0.2)]">
+              <div className="mb-4 text-[#f1ba4b]">★★★★★</div>
+              <p className="text-lg italic leading-8 opacity-80">"{t.text}"</p>
+              <div className="mt-4 text-xs uppercase tracking-widest opacity-80">
                 — {t.name}
               </div>
             </div>
@@ -204,7 +165,7 @@ const Hero = () => {
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl pb-16 lg:pb-32 px-4 lg:px-16">
-        <div className="relative flex flex-col items-center text-center gap-8 rounded-3xl bg-[#13100d] border border-[#f1ba4b]/30 px-8 py-16">
+        <div className="flex flex-col items-center text-center gap-8 rounded-3xl bg-[#13100d] border border-[#f1ba4b]/30 px-8 py-16">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,oklch(0.82_0.14_82/0.25),transparent_60%)]" />
 
           <div className="flex flex-col gap-2 text-center">
@@ -217,10 +178,10 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <NavLink to="/contact" className="rounded-full bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] px-8 py-4 text-sm md:text-md tracking-widest uppercase text-black font-semibold transition-all duration-300 hover:scale-105">
+            <NavLink to="/contact" className="rounded-full bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] px-8 py-4 text-sm font-medium uppercase tracking-widest text-[#13100d] transition-all duration-300 hover:scale-105 hover:shadow-[0_10px_30px_rgba(212,181,76,0.35)]">
               Contact Now
             </NavLink>
-            <NavLink to="/rates" className="rounded-full border border-[#f1ba4b]/30 px-8 py-4 text-sm font-semibold uppercase tracking-widest text-[#f1ba4b] transition-all duration-300 hover:border-[#f1ba4b] hover:bg-[#f1ba4b]/15">
+            <NavLink to="/rates" className="rounded-full border border-[#d4b54c] px-8 py-4 text-sm font-medium uppercase tracking-widest text-[#f1ba4b] transition-all duration-300 hover:bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] hover:text-[#13100d]">
               View Rates
             </NavLink>
           </div>
@@ -230,4 +191,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default Home
