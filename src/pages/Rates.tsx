@@ -6,9 +6,9 @@ const Hero = lazy(()=>import("../section/Hero"));
 
 const packages = [
   { name: "Basic", duration: "2 Hours", features: ["Single Shot", "Sexy Talk", "Blowjob & Handjob"], popular: false },
-  { name: "Premium", duration: "4 Hours", features: ["Curated selection", "Sexy Talk", "Blowjob & Handjob", "Lip Kiss", "Girlfriend Experience"], popular: false },
-  { name: "VIP", duration: "Full Evening", features: ["Top-tier companion", "Sexy Talk", "Blowjob & Handjob", "Lip Kiss", "Girlfriend Experience", "Cum in Mouth"], popular: true },
-  { name: "Elite", duration: "Overnight / 24h", features: ["Model-tier companion", "Sexy Talk", "Blowjob & Handjob", "Lip Kiss", "Girlfriend Experience", "Cum in Mouth", "Anal Play"], popular: false },
+  { name: "Premium", duration: "4 Hours", features: ["Double Shot", "Sexy Talk", "Blowjob & Handjob", "Lip Kiss", "Girlfriend Experience"], popular: false },
+  { name: "VIP", duration: "Full Evening", features: ["Double Shot", "Sexy Talk", "Blowjob & Handjob", "Lip Kiss", "Girlfriend Experience", "Cum in Mouth"], popular: true },
+  { name: "Elite", duration: "Overnight / 24h", features: ["Multiple Shot", "Sexy Talk", "Blowjob & Handjob", "Lip Kiss", "Girlfriend Experience", "Cum in Mouth", "Anal Play"], popular: false },
 ];
 
 const process = [
