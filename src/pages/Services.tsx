@@ -91,7 +91,7 @@ const Services = () => {
         </script>
       </Helmet>
 
-      <Hero badge="Services" title1="Curated" title2="experiences" description="Bespoke companionship tailored to every occasion, orchestrated with quiet precision." />
+      <Hero badge="Services" title1="Curated" title2="experiences" title3="" description="Bespoke companionship tailored to every occasion, orchestrated with quiet precision." />
 
       <section className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 py-12 lg:py-24 px-4 lg:px-16">
         {services.map((s) => (

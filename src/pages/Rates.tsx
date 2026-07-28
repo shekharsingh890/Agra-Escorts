@@ -54,7 +54,7 @@ const Rates = () => {
         </script>
       </Helmet>
 
-      <Hero badge="Investment" title1="Transparent" title2="packages" description="Every package reflects our commitment to five-star service. Custom arrangements available on request." />
+      <Hero badge="Investment" title1="Transparent" title2="packages" title3="" description="Every package reflects our commitment to five-star service. Custom arrangements available on request." />
 
       <section className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6 pt-12 lg:pt-24 px-4 lg:px-16">
         {packages.map((p) => (
@@ -88,7 +88,7 @@ const Rates = () => {
         ))}
       </section>
 
-      <Hero badge="Booking process" title1="Simple. Discreet." title2="Elegant." description="" />
+      <Hero badge="Booking process" title1="Simple. Discreet." title2="Elegant." title3="" description="" />
 
       <section className="max-w-7xl mx-auto grid md:grid-cols-4 gap-6 pt-12 lg:pt-24 px-4 lg:px-16">
         {process.map((s) => (

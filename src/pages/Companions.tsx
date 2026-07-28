@@ -1,7 +1,8 @@
-import Heading from "../section/Hero"
 import * as Icons from '../assets/companions'
-import { useState } from "react"
+import { lazy, useState } from "react"
 import { NavLink } from "react-router-dom"
+
+const Hero = lazy(()=>import('../section/Hero'))
 
 const AVAIL = ["All", "24/7", "Evenings", "By Appointment"];
 const NAT = ["All", "Indian", "Russian", "French", "American"];
@@ -161,28 +162,17 @@ const Companions = () => {
 
   return (
     <>
-      <section className="mx-auto max-w-7xl px-6 py-8 pt-38">
-        <Heading badge="Our companions"
-          title={
-            <>
-              <span className="bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] bg-clip-text italic text-transparent">
-                Elite
-              </span>{" "}
-              profiles
-            </>
-          } subtitle="Each companion is personally verified and interviewed by our concierge team."
-        />
-      </section>
+      <Hero badge="Our companions" title1="" title2="Elite" title3="profiles" description="Each companion is personally verified and interviewed by our concierge team." />
 
-      <section className="mx-auto max-w-7xl px-6">
-        <div className="rounded-3xl border border-[#514d45]/30 bg-[#2a2825] p-6 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm">
+      <section className="mx-auto max-w-7xl px-4 pt-12 lg:pt-24">
+        <div className="rounded-3xl border border-[#f1ba4b]/30 bg-[#13100d] p-6 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm">
           <div className="grid gap-4 md:grid-cols-4">
             <label className="block">
-              <span className="mb-2 block text-xs uppercase tracking-widest text-[#d4b54c]">Age</span>
+              <span className="mb-2 block text-xs uppercase tracking-widest text-[#f1ba4b]">Age</span>
 
-              <select value={age} onChange={(e) => setAge(e.target.value)} className="w-full rounded-xl border border-[#d4b54c]/30 bg-[#1f1d1b]/80 px-4 py-2.5 text-sm text-[#f5f3eb] outline-none transition-all duration-300 focus:border-[#d4b54c] focus:ring-2 focus:ring-[#d4b54c]/20">
+              <select value={age} onChange={(e) => setAge(e.target.value)} className="w-full rounded-xl border border-[#f1ba4b]/30 bg-[#13100d]/80 px-4 py-2.5 text-sm outline-none transition-all duration-300 focus:border-[#f1ba4b] focus:ring-2 focus:ring-[#13100d]/20">
                 {AGE.map((item) => (
-                  <option key={item} value={item} className="bg-[#1f1d1b] text-[#f5f3eb]">
+                  <option key={item} value={item} className="bg-[#13100d]">
                     {item}
                   </option>
                 ))}
@@ -190,10 +180,10 @@ const Companions = () => {
             </label>
 
             <label className="block">
-              <span className="mb-2 block text-xs uppercase tracking-widest text-[#d4b54c]">Location</span>
-              <select value={loc} onChange={(e) => setLoc(e.target.value)} className="w-full rounded-xl border border-[#d4b54c]/30 bg-[#1f1d1b]/80 px-4 py-2.5 text-sm text-[#f5f3eb] outline-none transition-all duration-300 focus:border-[#d4b54c] focus:ring-2 focus:ring-[#d4b54c]/20">
+              <span className="mb-2 block text-xs uppercase tracking-widest text-[#f1ba4b]">Location</span>
+              <select value={loc} onChange={(e) => setLoc(e.target.value)} className="w-full rounded-xl border border-[#f1ba4b]/30 bg-[#13100d]/80 px-4 py-2.5 text-sm text-[#f5f3eb] outline-none transition-all duration-300 focus:border-[#f1ba4b] focus:ring-2 focus:ring-[#13100d]/20">
                 {LOC.map((item) => (
-                  <option key={item} value={item} className="bg-[#1f1d1b] text-[#f5f3eb]">
+                  <option key={item} value={item} className="bg-[#13100d]">
                     {item}
                   </option>
                 ))}
@@ -201,10 +191,10 @@ const Companions = () => {
             </label>
 
             <label className="block">
-              <span className="mb-2 block text-xs uppercase tracking-widest text-[#d4b54c]">Availability</span>
-              <select value={avail} onChange={(e) => setAvail(e.target.value)} className="w-full rounded-xl border border-[#d4b54c]/30 bg-[#1f1d1b]/80 px-4 py-2.5 text-sm text-[#f5f3eb] outline-none transition-all duration-300 focus:border-[#d4b54c] focus:ring-2 focus:ring-[#d4b54c]/20">
+              <span className="mb-2 block text-xs uppercase tracking-widest text-[#f1ba4b]">Availability</span>
+              <select value={avail} onChange={(e) => setAvail(e.target.value)} className="w-full rounded-xl border border-[#f1ba4b]/30 bg-[#13100d]/80 px-4 py-2.5 text-sm outline-none transition-all duration-300 focus:border-[#f1ba4b] focus:ring-2 focus:ring-[#13100d]/20">
                 {AVAIL.map((item) => (
-                  <option key={item} value={item} className="bg-[#1f1d1b] text-[#f5f3eb]">
+                  <option key={item} value={item} className="bg-[#13100d]">
                     {item}
                   </option>
                 ))}
@@ -212,10 +202,10 @@ const Companions = () => {
             </label>
 
             <label className="block">
-              <span className="mb-2 block text-xs uppercase tracking-widest text-[#d4b54c]">Nationality</span>
-              <select value={nat} onChange={(e) => setNat(e.target.value)} className="w-full rounded-xl border border-[#d4b54c]/30 bg-[#1f1d1b]/80 px-4 py-2.5 text-sm text-[#f5f3eb] outline-none transition-all duration-300 focus:border-[#d4b54c] focus:ring-2 focus:ring-[#d4b54c]/20">
+              <span className="mb-2 block text-xs uppercase tracking-widest text-[#f1ba4b]">Nationality</span>
+              <select value={nat} onChange={(e) => setNat(e.target.value)} className="w-full rounded-xl border border-[#f1ba4b]/30 bg-[#13100d]/80 px-4 py-2.5 text-sm outline-none transition-all duration-300 focus:border-[#f1ba4b] focus:ring-2 focus:ring-[#13100d]/20">
                 {NAT.map((item) => (
-                  <option key={item} value={item} className="bg-[#1f1d1b] text-[#f5f3eb]">
+                  <option key={item} value={item} className="bg-[#13100d]">
                     {item}
                   </option>
                 ))}
@@ -224,19 +214,19 @@ const Companions = () => {
           </div>
 
           <div className="mt-4 flex flex-wrap gap-3">
-            <button onClick={() => setIndep(!indep)} className={`rounded-full px-5 py-2 text-xs font-medium uppercase tracking-widest transition-all duration-300 ${indep ? "bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] text-[#1f1d1b]" : "border border-[#d4b54c] text-[#d4b54c] hover:bg-[#d4b54c] hover:text-[#1f1d1b]"}`}>
+            <button onClick={() => setIndep(!indep)} className={`rounded-full px-5 py-2 text-xs font-medium uppercase tracking-widest transition-all duration-300 ${indep ? "bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] text-[#13100d]" : "border border-[#f1ba4b] text-[#f1ba4b] hover:bg-[#f1ba4b] hover:text-[#13100d]"}`}>
               Independent
             </button>
-            <button onClick={() => setVip(!vip)} className={`rounded-full px-5 py-2 text-xs font-medium uppercase tracking-widest transition-all duration-300 ${vip ? "bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] text-[#1f1d1b]" : "border border-[#d4b54c] text-[#d4b54c] hover:bg-[#d4b54c] hover:text-[#1f1d1b]"}`}>
+            <button onClick={() => setVip(!vip)} className={`rounded-full px-5 py-2 text-xs font-medium uppercase tracking-widest transition-all duration-300 ${vip ? "bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] text-[#13100d]" : "border border-[#f1ba4b] text-[#f1ba4b] hover:bg-[#f1ba4b] hover:text-[#13100d]"}`}>
               VIP
             </button>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto mt-12 grid max-w-7xl gap-6 px-6 pb-24 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <section className="mx-auto max-w-7xl grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-4 py-12 lg:py-24">
         {filtered.map((p) => (
-          <div key={p.id} className="group overflow-hidden rounded-3xl border border-[#514d45]/30 bg-[#130e0b] shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#d4b54c]/40 hover:shadow-[0_20px_60px_-20px_rgba(212,181,76,0.2)]">
+          <div key={p.id} className="group overflow-hidden rounded-3xl border border-[#f1ba4b]/30 bg-[#13100d] shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#f1ba4b]/40 hover:shadow-[0_20px_60px_-20px_rgba(212,181,76,0.2)]">
             <div className="relative aspect-4/5 overflow-hidden">
               <img src={p.image} alt={p.name} loading="lazy" width={800} height={1000} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"/>
 
@@ -244,7 +234,7 @@ const Companions = () => {
 
               {p.tags.length > 0 ? (
                 <div className="absolute left-3 top-3 flex gap-2">
-                  {p.tags.map((t) => (<span key={t} className="rounded-full border border-[#d4b54c]/30 bg-[#1f1d1b]/70 px-3 py-1 text-[10px] uppercase tracking-widest text-[#d4b54c] backdrop-blur-md">
+                  {p.tags.map((t) => (<span key={t} className="rounded-full border border-[#f1ba4b]/30 bg-[#13100d]/70 px-3 py-1 text-[10px] uppercase tracking-widest text-[#f1ba4b] backdrop-blur-md">
                       {t}
                     </span>
                   ))}
@@ -252,8 +242,8 @@ const Companions = () => {
               ) : null}
 
               <div className="absolute bottom-0 w-full p-5">
-                <h3 className="text-2xl font-serif font-normal text-[#f5f3eb]">{p.name}</h3>
-                <p className="text-xs text-[#d4b54c]">
+                <h3 className="text-2xl font-serif font-normal">{p.name}</h3>
+                <p className="text-xs text-[#f1ba4b]">
                   {p.age} yrs · {p.height} · {p.city}
                 </p>
               </div>
@@ -270,7 +260,7 @@ const Companions = () => {
               </div>
               <p className="line-clamp-2 leading-6">{p.description}</p>
 
-              <NavLink to="/contact" className="mt-3 block rounded-full border border-[#d4b54c] px-4 py-2.5 text-center text-[11px] font-medium uppercase tracking-widest text-[#d4b54c] transition-all duration-300 hover:bg-[#d4b54c] hover:text-[#1f1d1b]">
+              <NavLink to="/contact" className="mt-3 block rounded-full border border-[#f1ba4b] px-4 py-2.5 text-center text-[11px] font-medium uppercase tracking-widest text-[#f1ba4b] transition-all duration-300 hover:bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] hover:text-[#13100d]">
                 View Details
               </NavLink>
             </div>
@@ -278,7 +268,7 @@ const Companions = () => {
         ))}
 
         {filtered.length === 0 ? (
-          <p className="col-span-full text-center text-[#b8b2a7]">
+          <p className="col-span-full text-center">
             No companions match your filters.
           </p>
         ) : null}

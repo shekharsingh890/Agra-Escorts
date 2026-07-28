@@ -151,7 +151,7 @@ const Contact = () => {
           </script>
       </Helmet>
 
-      <Hero badge="Contact" title1="Reserve your" title2="evening" description="Our concierge team responds within minutes, 24 hours a day." />
+      <Hero badge="Contact" title1="Reserve your" title2="evening" title3="" description="Our concierge team responds within minutes, 24 hours a day." />
 
       <section className="flex flex-col gap-16 pt-12 lg:pt-24 px-4 lg:px-16">
         <div className="flex flex-col lg:flex-row gap-8">

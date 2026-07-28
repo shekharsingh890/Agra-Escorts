@@ -1,4 +1,6 @@
-import Heading from "../section/Hero"
+import { lazy } from "react";
+
+const Hero = lazy(()=>import('../section/Hero'))
 
 const terms = [
   { t: "Acceptance", d: "By accessing this website or engaging our services, you confirm you are at least 18 years old and agree to be bound by these terms." },
@@ -17,30 +19,18 @@ const TermsAndConditions = () => {
 
   return (
     <>
-      <section className="mx-auto max-w-7xl px-6 pt-38">
-        <Heading badge="Legal"
-          title={
-            <>
-              Terms &{" "}
-              <span className="bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] bg-clip-text italic text-transparent">
-                Conditions
-              </span>
-            </>
-          } 
-          subtitle={`Last updated: 27/07/${currentYear}`}
-        />
-      </section>
+      <Hero badge="Legal" title1="Terms &" title2="Conditions" title3="" description={`Last updated: 27/07/${currentYear}`} />
 
-      <section className="mx-auto my-16 max-w-4xl space-y-6 px-6 pb-24">
+      <section className="mx-auto max-w-4xl space-y-6 py-12 lg:py-24 px-4 lg:px-16">
         {terms.map((s, i) => (
-          <div key={s.t} className="rounded-3xl border border-[#514d45]/30 bg-[#2a2825] p-8 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#d4b54c]/40 hover:shadow-[0_20px_60px_-20px_rgba(212,181,76,0.2)]">
-            <h2 className="text-2xl font-semibold text-[#f5f3eb]">
-              <span className="bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] bg-clip-text text-transparent">
+          <div key={s.t} className="rounded-3xl border border-[#f1ba4b]/30 bg-[#13100d] p-8 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#f1ba4b]/40 hover:shadow-[0_20px_60px_-20px_rgba(212,181,76,0.2)]">
+            <h2 className="text-2xl font-serif font-medium">
+              <span className="mr-2 bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] bg-clip-text text-transparent">
                 {String(i + 1).padStart(2, "0")}.
               </span>{" "}
               {s.t}
             </h2>
-            <p className="mt-3 text-sm leading-7 text-[#b8b2a7]">{s.d}</p>
+            <p className="pt-3 text-sm leading-7 opacity-70">{s.d}</p>
           </div>
         ))}
       </section>
