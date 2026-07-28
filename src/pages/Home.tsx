@@ -3,6 +3,7 @@ import hero from "../assets/hero.jpg"
 import Heading from "../section/Hero";
 import * as Icons from '../assets/companions'
 import { useState } from "react";
+import Faqs from "../section/Faqs";
 
 const reasons = [
   { icon: "★", title: "Professional Companions", text: "Carefully selected, sophisticated companions with impeccable etiquette." },
@@ -30,11 +31,11 @@ const testimonials = [
   { name: "M.V.", text: "The companion was cultured and charming — perfect for my business dinner." },
 ];
 
-const FAQS = [
-  { q: "How do I book a companion?", a: "You can book via our contact form, WhatsApp or by calling our 24/7 concierge line." },
-  { q: "Is my privacy protected?", a: "Absolute discretion is our cornerstone. All details remain strictly confidential." },
-  { q: "Do you serve outside Aerocity?", a: "Yes, we serve all of Delhi NCR including Gurgaon, Noida and 5-star hotels citywide." },
-  { q: "What payment methods do you accept?", a: "We accept cash, UPI, bank transfer and select international payments." },
+const faqs = [
+  { q: "How can I book Aerocity Escorts?", a: "You can book by calling or WhatsApp on +91 9999999999. Just tell us your preferred time, hotel name, and girl choice. Booking confirmed within 5-10 minutes." },
+  { q: "Is my privacy protected?", a: "100% Privacy Guaranteed. We maintain full confidentiality. No details are shared with anyone. Your identity is completely safe." },
+  { q: "Do you provide real photos and verified girls?", a: "Yes, all our girls are 100% verified with recent genuine photos. We never use fake or stolen images." },
+  { q: "What payment methods do you accept?", a: "We accept cash, UPI, bank transfer and international payments." },
 ];
 
 const Hero = () => {
@@ -199,60 +200,29 @@ const Hero = () => {
       </section>
 
       {/* FAQ */}
-      <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
-        <Heading badge="FAQs"
-          title={
-            <>
-              Frequently asked{" "}
-              <span className="bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] bg-clip-text italic text-transparent">
-                questions
-              </span>
-            </>
-          } subtitle="" />
-
-        <div className="mx-auto mt-12 max-w-3xl space-y-4">
-          {FAQS.map((f, index) => (
-            <div key={f.q} className="overflow-hidden rounded-3xl border border-[#514d45]/30 bg-[#130e0b] transition-all duration-300 hover:border-[#d4b54c]/40">
-              <button onClick={() => setOpenIndex(openIndex === index ? null : index)} className="flex w-full items-center justify-between p-6 text-left text-lg font-normal text-[#f5f3eb] font-serif">
-                <span>{f.q}</span>
-                <span className={`text-2xl text-[#d4b54c] transition-transform duration-300 ${openIndex === index ? "rotate-45" : ""}`}>
-                  +
-                </span>
-              </button>
-
-              <div className={`grid transition-all duration-500 ease-in-out ${openIndex === index ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
-                <div className="overflow-hidden">
-                  <p className="px-6 pb-6 text-sm leading-7 text-[#b8b2a7]">{f.a}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <Faqs faqs={faqs} />
 
       {/* CTA */}
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <div className="relative overflow-hidden rounded-3xl border border-[#d4b54c]/40 bg-[#191817] px-8 py-20 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_35%,rgba(180,130,40,0.32),transparent_45%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,transparent_35%,rgba(0,0,0,.45)_70%,rgba(0,0,0,.75)_100%)]" />
-          <div className="absolute inset-0 bg-linear-to-b from-transparent via-[#0d0c0b]/10 to-[#0d0c0b]/30" />
+      <section className="mx-auto max-w-7xl pb-16 lg:pb-32 px-4 lg:px-16">
+        <div className="relative flex flex-col items-center text-center gap-8 rounded-3xl bg-[#13100d] border border-[#f1ba4b]/30 px-8 py-16">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,oklch(0.82_0.14_82/0.25),transparent_60%)]" />
 
-          <div className="relative text-center">
-            <h2 className=" text-4xl font-normal leading-tight text-[#f5f3eb] md:text-6xl font-serif">
+          <div className="flex flex-col gap-2 text-center">
+            <h2 className="font-serif text-3xl md:text-5xl font-normal leading-tight">
               Book your{" "}
-              <span className="bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] bg-clip-text italic text-transparent">unforgettable</span>{" "}
-              evening
+              <span className="bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] bg-clip-text italic text-transparent">unforgettable</span>
+              {" "}evening
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-[#b8b2a7]">Our concierge team is available 24/7 for immediate and scheduled bookings.</p>
+            <p className="md:text-lg max-w-2xl font-medium opacity-70">Our team is available 24/7 and usually replies within a few minutes.</p>
+          </div>
 
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <NavLink to="/contact" className="rounded-full bg-linear-to-r from-[#f2e0a6] via-[#d4b54c] to-[#9e7b23] px-8 py-4 text-sm font-semibold uppercase tracking-widest text-[#1f1d1b] transition-all duration-300 hover:scale-105 hover:shadow-[0_10px_30px_rgba(212,181,76,0.35)]">
-                Contact Now
-              </NavLink>
-              <NavLink to="/rates" className="rounded-full border border-[#d4b54c] px-8 py-4 text-sm font-medium uppercase tracking-widest text-[#d4b54c] transition-all duration-300 hover:bg-[#d4b54c] hover:text-[#1f1d1b]">
-                View Rates
-              </NavLink>
-            </div>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <NavLink to="/contact" className="rounded-full bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] px-8 py-4 text-sm md:text-md tracking-widest uppercase text-black font-semibold transition-all duration-300 hover:scale-105">
+              Contact Now
+            </NavLink>
+            <NavLink to="/rates" className="rounded-full border border-[#f1ba4b]/30 px-8 py-4 text-sm font-semibold uppercase tracking-widest text-[#f1ba4b] transition-all duration-300 hover:border-[#f1ba4b] hover:bg-[#f1ba4b]/15">
+              View Rates
+            </NavLink>
           </div>
         </div>
       </section>
