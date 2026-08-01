@@ -4,10 +4,10 @@ import { NavLink } from "react-router-dom"
 
 const Hero = lazy(()=>import('../section/Hero'))
 
-const AVAIL = ["All", "24/7", "Evenings", "By Appointment"];
-const NAT = ["All", "Indian", "Russian", "French", "American"];
+const AVAILABILITY = ["All", "24/7", "Evenings", "By Appointment"];
+const NATIONALITY = ["All", "Indian", "Russian", "French", "American"];
 const AGE = ["All", "22-25", "26-29"];
-const LOC = ["All", "Aerocity", "Delhi", "Gurgaon", "New Delhi"];
+const LOCATION = ["All", "Aerocity", "Delhi", "Gurgaon", "New Delhi"];
 
 const profiles = [
   {
@@ -182,7 +182,7 @@ const Companions = () => {
             <label className="block">
               <span className="mb-2 block text-xs uppercase tracking-widest text-[#f1ba4b]">Location</span>
               <select value={loc} onChange={(e) => setLoc(e.target.value)} className="w-full rounded-xl border border-[#f1ba4b]/30 bg-[#13100d]/80 px-4 py-2.5 text-sm text-[#f5f3eb] outline-none transition-all duration-300 focus:border-[#f1ba4b] focus:ring-2 focus:ring-[#13100d]/20">
-                {LOC.map((item) => (
+                {LOCATION.map((item) => (
                   <option key={item} value={item} className="bg-[#13100d]">
                     {item}
                   </option>
@@ -193,7 +193,7 @@ const Companions = () => {
             <label className="block">
               <span className="mb-2 block text-xs uppercase tracking-widest text-[#f1ba4b]">Availability</span>
               <select value={avail} onChange={(e) => setAvail(e.target.value)} className="w-full rounded-xl border border-[#f1ba4b]/30 bg-[#13100d]/80 px-4 py-2.5 text-sm outline-none transition-all duration-300 focus:border-[#f1ba4b] focus:ring-2 focus:ring-[#13100d]/20">
-                {AVAIL.map((item) => (
+                {AVAILABILITY.map((item) => (
                   <option key={item} value={item} className="bg-[#13100d]">
                     {item}
                   </option>
@@ -204,7 +204,7 @@ const Companions = () => {
             <label className="block">
               <span className="mb-2 block text-xs uppercase tracking-widest text-[#f1ba4b]">Nationality</span>
               <select value={nat} onChange={(e) => setNat(e.target.value)} className="w-full rounded-xl border border-[#f1ba4b]/30 bg-[#13100d]/80 px-4 py-2.5 text-sm outline-none transition-all duration-300 focus:border-[#f1ba4b] focus:ring-2 focus:ring-[#13100d]/20">
-                {NAT.map((item) => (
+                {NATIONALITY.map((item) => (
                   <option key={item} value={item} className="bg-[#13100d]">
                     {item}
                   </option>
