@@ -6,8 +6,8 @@ const Hero = lazy(()=>import('../section/Hero'))
 
 const AVAILABILITY = ["All", "24/7", "Evenings", "By Appointment"];
 const NATIONALITY = ["All", "Indian", "Russian", "French", "American"];
-const AGE = ["All", "22-25", "26-29"];
-const LOCATION = ["All", "Aerocity", "Delhi", "Gurgaon", "New Delhi"];
+const AGE = ["All", "22-25", "26-29", "30+"];
+const LOCATION = ["All", "Delhi", "Gurgaon", "Noida"];
 
 const profiles = [
   {
