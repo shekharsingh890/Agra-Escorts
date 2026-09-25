@@ -5,12 +5,12 @@ import Faqs from "../section/Faqs";
 import Hero from "../section/Hero";
 
 const reasons = [
-  { icon: "★", title: "Professional Companions", text: "Carefully selected, sophisticated companions with impeccable etiquette." },
-  { icon: "✓", title: "Verified Profiles", text: "Every companion is personally verified for authenticity and quality." },
-  { icon: "◈", title: "Complete Privacy", text: "Absolute discretion and confidentiality at every stage of your booking." },
-  { icon: "◐", title: "24/7 Availability", text: "Round-the-clock concierge service for immediate and scheduled bookings." },
-  { icon: "♛", title: "VIP Service", text: "White-glove treatment tailored to the most discerning gentlemen." },
-  { icon: "→", title: "Fast Booking", text: "Streamlined booking within minutes via WhatsApp, phone or email." },
+  { icon: "★", title: "Great Companions", text: "Handpicked companions who are friendly, polished, and easy to be around." },
+  { icon: "✓", title: "Verified Profiles", text: "Every profile is checked so you know you're dealing with real people." },
+  { icon: "◈", title: "Total Privacy", text: "Your privacy comes first, with discreet and confidential service throughout." },
+  { icon: "◐", title: "Available 24/7", text: "Need a booking now or later? Our concierge team is available around the clock." },
+  { icon: "♛", title: "VIP Treatment", text: "Enjoy a smooth, personal service designed around what you need." },
+  { icon: "→", title: "Quick & Easy Booking", text: "Book in just a few minutes through WhatsApp, phone, or email." },
 ];
 
 const featured = [
@@ -22,16 +22,16 @@ const featured = [
   { id: 6, image:Icons.profile2, name: "Amelia", age: 28, city: "Gurgaon", height: "5'9\"", languages: "English, Portuguese" },
 ];
 
-const services = ["Dinner Date", "Corporate Companion", "Travel Companion", "Party Companion", "Event Escort", "VIP Companion"];
+const services = ["Russian Escorts", "College Girls", "Model Escorts", "VIP Outcall", "Incall Service", "Dinner Date"];
 
 const testimonials = [
-  { name: "R.K.", text: "Impeccable service from booking to farewell. Truly a class above." },
-  { name: "A.S.", text: "Discreet, elegant, and unforgettable. Aerocity Escorts sets the standard." },
-  { name: "M.V.", text: "The companion was cultured and charming — perfect for my business dinner." },
+  { text: "Had an amazing experience. Ananya was incredibly warm, professional and made everything feel comfortable. The booking process was smooth and discreet.", duration: "- 2 days ago" },
+  { text: "Sofia was charming, friendly and wonderful to talk to. Everything was handled professionally and the service was exactly as described. Would definitely return.", duration: "- 1 week ago" },
+  { text: "Meera was beautiful, polite and very professional. One of the best experiences I've had with an escort service in Agra. Booking was quick and hassle-free.", duration: "- 4 days ago" },
 ];
 
 const faqs = [
-  { q: "How can I book Aerocity Escorts?", a: "You can book by calling or WhatsApp on +91 9999999999. Just tell us your preferred time, hotel name, and girl choice. Booking confirmed within 5-10 minutes." },
+  { q: "How can I book Agra Escorts?", a: "You can book by calling or WhatsApp on +91 9762933940. Just tell us your preferred time, hotel name, and girl choice. Booking confirmed within 5-10 minutes." },
   { q: "Is my privacy protected?", a: "100% Privacy Guaranteed. We maintain full confidentiality. No details are shared with anyone. Your identity is completely safe." },
   { q: "Do you provide real photos and verified girls?", a: "Yes, all our girls are 100% verified with recent genuine photos. We never use fake or stolen images." },
   { q: "What payment methods do you accept?", a: "We accept cash, UPI, bank transfer and international payments." },
@@ -40,23 +40,23 @@ const faqs = [
 const Home = () => {
   return (
     <>
-      <section className="relative flex min-h-[95vh] items-center justify-center overflow-hidden">
+      <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
         <img src={hero} alt="Luxury lobby ambiance" width={1600} height={1000} className="absolute inset-0 h-full w-full object-cover"/>
 
         <div className="absolute inset-0 bg-linear-to-b from-[#1f1d1b]/40 via-[#161513]/70 to-[#0f0f0e]/90" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(212,181,76,0.25),transparent_40%)]" />
 
-        <div className="relative z-10 mx-auto max-w-5xl px-6 pt-20 text-center">
-          <p className="mb-6 animate-fade-in text-xs uppercase tracking-[0.4em] text-[#f1ba4b] font-serif">Elite Luxury Companionship</p>
-          <h1 className="animate-fade-in text-5xl leading-[1.05] md:text-7xl lg:text-8xl font-serif">
+        <div className="flex flex-col gap-8 p-4 mx-auto max-w-5xl text-center z-1">
+          <p className="text-xs uppercase tracking-[0.4em] text-[#f1ba4b] font-serif">Elite Luxury Companionship</p>
+          <h1 className="text-5xl md:text-7xl leading-[1.05] font-serif">
             Premium{" "}
-            <span className="bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] bg-clip-text italic text-transparent">Aerocity</span>
+            <span className="bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] bg-clip-text italic text-transparent">Agra</span>
             <br />
             Escorts
           </h1>
-          <p className="mx-auto pt-8 max-w-2xl animate-fade-in text-lg opacity-80 md:text-xl">Luxury Companionship & Elite Escort Services in Aerocity, Delhi. Discreet. Verified. Unforgettable.</p>
+          <p className="mx-auto max-w-2xl text-lg md:text-xl opacity-80">Luxury Companionship & Elite Escort Services in Fatehabad Road, Agra. Discreet. Verified. Unforgettable.</p>
 
-          <div className="mt-10 flex flex-wrap justify-center gap-4 animate-fade-in">
+          <div className="flex flex-wrap justify-center gap-4 mt-4">
             <NavLink to="/companions" className="rounded-full bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] px-8 py-4 text-sm font-medium uppercase tracking-widest text-[#13100d] transition-all duration-300 hover:scale-105 hover:shadow-[0_10px_30px_rgba(212,181,76,0.35)]">
               View Profiles
             </NavLink>
@@ -67,28 +67,29 @@ const Home = () => {
         </div>
       </section>
 
-      {/* why choose us */}
-      <Hero badge="Why Choose Us" title1="The" title2="gold standard" title3="in companionship" description="Six reasons discerning gentlemen choose Aerocity Escorts." />
+      {/* Why choose us */}
+      <Hero badge="Why Choose Us" title1="Our" title2="premium" title3="services" description="A Prosperous Side of Agra Escort Service for Prestigious Customers." />
 
       <section className="mx-auto max-w-7xl px-4 lg:px-16 pt-12 md:pt-24">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {reasons.map((r) => (
-            <div key={r.title} className="rounded-3xl border border-[#f1ba4b]/30 bg-[#13100d] p-8 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#f1ba4b]/40 hover:shadow-[0_20px_60px_-20px_rgba(212,181,76,0.2)]">
-              <div className="space-y-3">
-                <div className="grid h-12 w-12 place-items-center rounded-xl border border-[#f1ba4b]/30 text-xl text-[#f1ba4b]">{r.icon}</div>
-                <h3 className="text-lg font-serif font-semibold opacity-80">{r.title}</h3>
-                <p className="text-sm leading-7 opacity-80">{r.text}</p>
+            <div key={r.title} className="flex flex-col gap-6 rounded-3xl bg-[#13100d] border border-[#f1ba4b]/30 p-8 transition duration-300 hover:-translate-y-1 hover:border-[#f1ba4b]/80">
+              <div className="h-14 w-14 flex items-center justify-center rounded-xl border border-[#f1ba4b]/30 text-xl text-[#f1ba4b]">{r.icon}</div>
+
+              <div className="flex flex-col gap-2">
+                <h3 className="text-lg font-serif font-medium">{r.title}</h3>
+                <p className="self-end text-sm leading-6 opacity-70">{r.text}</p>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* featured companions */}
-      <Hero badge="Featured Companions" title1="Meet our" title2="elite" title3="companions" description="A curated selection of our most sought-after companions." />
+      {/* Featured companions */}
+      <Hero badge="Featured Companions" title1="Meet our" title2="elite" title3="companions" description="Meet some of our most popular companions, handpicked for memorable experiences." />
 
       <section className="mx-auto max-w-7xl px-4 lg:px-16 pt-12 md:pt-24">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {featured.map((p) => (
             <div key={p.id} className="group overflow-hidden rounded-3xl border border-[#f1ba4b]/30 bg-[#13100d] shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#f1ba4b]/40 hover:shadow-[0_20px_60px_-20px_rgba(212,181,76,0.2)]">
               <div className="relative aspect-4/5 overflow-hidden">
@@ -123,37 +124,36 @@ const Home = () => {
         </div>
       </section>
 
-      {/* services */}
+      {/* Services */}
       <Hero badge="Our Services" title1="A companion for every" title2="occasion" title3="" description="From intimate dinners to international travel." />
 
-      <section className="mx-auto max-w-7xl px-4 lg:px-16 pt-12 md:pt-24">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="flex flex-col items-center gap-8 mx-auto max-w-7xl px-4 lg:px-16 pt-12 md:pt-24">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
           {services.map((s) => (
-            <div key={s} className="flex items-center justify-between rounded-3xl border border-[#f1ba4b]/30 bg-[#13100d] p-6 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#f1ba4b]/40 hover:shadow-[0_20px_60px_-20px_rgba(212,181,76,0.2)] font-serif">
-              <span className="text-xl font-normal opacity-80">{s}</span>
-              <span className="text-xl text-[#f1ba4b] transition-transform duration-300 group-hover:translate-x-1">→</span>
+            <div key={s} className="flex items-center justify-between gap-4 rounded-3xl bg-[#13100d] border border-[#f1ba4b]/30 p-8 transition duration-300 hover:-translate-y-1 hover:border-[#f1ba4b]/80 font-serif">
+              <span className="text-lg font-serif font-medium">{s}</span>
+              <span className="text-[#f1ba4b] transition duration-300 group-hover:translate-x-1">→</span>
             </div>
           ))}
         </div>
 
-        <div className="mt-10 text-center">
-          <NavLink to="/services" className="inline-block rounded-full border border-[#f1ba4b] px-8 py-3 text-sm font-medium uppercase tracking-widest text-[#f1ba4b] transition-all duration-300 hover:bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] hover:text-[#13100d]">
-            All Services
-          </NavLink>
-        </div>
+        <NavLink to="/services" className="rounded-full border border-[#d4b54c] px-8 py-3 text-sm font-medium uppercase tracking-widest text-[#f1ba4b] transition-all duration-300 hover:bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] hover:text-[#13100d]">
+          All Services
+        </NavLink>
       </section>
 
-      {/* testimonials */}
+      {/* Testimonials */}
       <Hero badge="Testimonials" title1="Words from our" title2="clients" title3="" description="" />
 
       <section className="mx-auto max-w-7xl px-4 lg:px-16 pt-12 md:pt-24">
         <div className="grid gap-6 md:grid-cols-3">
           {testimonials.map((t) => (
-            <div key={t.name} className="rounded-3xl border border-[#f1ba4b]/30 bg-[#13100d] p-8 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#f1ba4b]/40 hover:shadow-[0_20px_60px_-20px_rgba(212,181,76,0.2)]">
-              <div className="mb-4 text-[#f1ba4b]">★★★★★</div>
-              <p className="text-lg italic leading-8 opacity-80">"{t.text}"</p>
-              <div className="mt-4 text-xs uppercase tracking-widest opacity-80">
-                — {t.name}
+            <div key={t.text} className="flex flex-col gap-6 rounded-3xl bg-[#13100d] border border-[#f1ba4b]/30 p-8 transition duration-300 hover:-translate-y-1 hover:border-[#f1ba4b]/80">
+              <div className="text-[#f1ba4b]">★★★★★</div>
+
+              <div className="flex flex-col gap-2">
+                <h3 className="text-lg font-serif font-medium">{t.text}</h3>
+                <p className="self-end text-sm leading-6 opacity-70">{t.duration}</p>
               </div>
             </div>
           ))}

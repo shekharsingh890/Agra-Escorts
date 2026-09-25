@@ -24,26 +24,26 @@ const contactInfo = [
     icon: MessageCircle,
     title: "WhatsApp",
     value: "Chat instantly",
-    link: "https://wa.me/919999999999",
+    link: "https://wa.me/919762933940",
   },
   {
     icon: Phone,
     title: "Call Us",
-    value: "+91 9999999999",
-    link: "tel:+919999999999"
+    value: "+91 9762933940",
+    link: "tel:+919762933940"
   },
   {
     icon: Mail,
     title: "Email",
-    value: "booking@aerocity.com",
-    link: "mailto:booking@aerocity.com"
+    value: "singhvikash7805@gmail.com",
+    link: "mailto:singhvikash7805@gmail.com"
   }
 ]
 
 const faqs = [
   {
-    q: "How can I book Aerocity Escorts?",
-    a: "You can book by calling or WhatsApp on +91 9999999999. Just tell us your preferred time, hotel name, and girl choice. Booking confirmed within 5-10 minutes."
+    q: "How can I book Agra Escorts?",
+    a: "You can book by calling or WhatsApp on +91 9762933940. Just tell us your preferred time, hotel name, and girl choice. Booking confirmed within 5-10 minutes."
   },
   {
     q: "How quickly can you arrange a booking?",
@@ -55,7 +55,7 @@ const faqs = [
   },
   {
     q: "What areas do you cover?",
-    a: "Aerocity, all of Delhi NCR, Gurgaon, Noida and travel worldwide on request."
+    a: "All of Agra and travel worldwide on request."
   },
   {
     q: "Is complete privacy guaranteed?",
@@ -134,7 +134,7 @@ const Contact = () => {
             "@type": "EntertainmentBusiness",
             name: "Aerocity Escorts",
             // url: "https://yourdomain.com",
-            // telephone: "+91 9999999999",
+            // telephone: "+91 9762933940",
             address: {
               "@type": "PostalAddress",
               addressLocality: "Aerocity",
@@ -228,7 +228,7 @@ const Contact = () => {
 
             <div className="flex flex-col gap-4 rounded-3xl bg-[#13100d] border border-[#f1ba4b]/30 p-8 transition duration-300 hover:-translate-y-1 hover:border-[#f1ba4b]/80">
               <p className="text-sm font-semibold uppercase tracking-wide text-[#f1ba4b]">Service Area</p>
-              <p className="font-serif">Aerocity · Delhi NCR · Gurgaon · Noida</p>
+              <p className="font-serif">Agra · Fatehbad Road</p>
 
               <p className="text-sm font-semibold uppercase tracking-wide text-[#f1ba4b]">Business Hours</p>
               <p className="font-serif">24 hours · 7 days</p>
@@ -237,7 +237,7 @@ const Contact = () => {
         </div>
 
         <iframe
-          src="https://www.google.com/maps?q=28.550421,77.121765&z=14&output=embed"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4357.521872021677!2d78.17074251949784!3d27.09358611886542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39747117d77d6e05%3A0xc8c200580433baa4!2sFatehabad%20Rd%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1790328376294!5m2!1sen!2sin"
           width="100%"
           height="350"
           style={{ border: 0 }}

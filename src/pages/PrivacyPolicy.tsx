@@ -11,7 +11,7 @@ const policies = [
   { title: "Security", desc: "We employ industry-standard security practices, including encrypted communications and restricted internal access, to protect any information shared with us." },
   { title: "Third Parties", desc: "We do not share client information with third parties except where strictly required by law. Payment providers process transactions under their own privacy terms." },
   { title: "User Rights", desc: "You may at any time request access to, correction of, or deletion of your personal information by contacting our concierge team. Requests are processed within 30 days." },
-  { title: "Contact Information", desc: "For any privacy-related questions or requests, please email privacy@aerocity.com." },
+  { title: "Contact Information", desc: "For any privacy-related questions or requests, please email singhvikash7805@gmail.com." },
 ];
 
 const PrivacyPolicy = () => {

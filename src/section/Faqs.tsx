@@ -22,7 +22,7 @@ const Faqs: React.FC<FaqsProps> = ({ faqs }) => {
 
   return (
     <>
-      <Hero badge="Faqs" title1="Frequently asked questions" title2="" description="" />
+      <Hero badge="Faqs" title1="Frequently asked questions" title2="" title3="" description="" />
 
       <section className="flex flex-col gap-3 py-12 lg:py-24 px-4 lg:px-16">
         {faqs.map((faq, index) => (

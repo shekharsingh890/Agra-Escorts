@@ -33,7 +33,7 @@ const Header = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 p-4 md:px-8 flex items-center justify-between gap-4 border-b border-transparent transition duration-300 ${scrolled ? "bg-black/50 backdrop-blur-xl border-[#f1ba4b]/30!" : "bg-transparent"}`}>
       <NavLink to="/" className="flex items-center gap-2 font-serif text-2xl font-medium">
-        <span className="bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] bg-clip-text text-transparent">Aerocity</span>
+        <span className="bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] bg-clip-text text-transparent">Agra</span>
         <span className="text-white/80">Escorts</span>
       </NavLink>
 
@@ -62,7 +62,7 @@ const Header = () => {
           >
             <div className="flex justify-between gap-4">
               <NavLink to="/" className="flex items-center gap-2 font-serif text-2xl font-medium">
-                <span className="bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] bg-clip-text text-transparent">Aerocity</span>
+                <span className="bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] bg-clip-text text-transparent">Agra</span>
                 <span className="text-white/80">Escorts</span>
               </NavLink>
               <X className="cursor-pointer" onClick={()=>setMenuOpen(false)}/>

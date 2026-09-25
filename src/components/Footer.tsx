@@ -14,10 +14,10 @@ const Footer = () => {
       <div className="p-8 md:p-12 lg:p-16 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12 lg:gap-16">
         <div className="flex flex-col gap-4 md:col-span-3 lg:col-span-2">
           <NavLink to="/" className="flex items-center gap-2 font-serif text-2xl font-medium">
-            <span className="bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] bg-clip-text text-transparent">Aerocity</span>
+            <span className="bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] bg-clip-text text-transparent">Agra</span>
             <span className="text-white/80">Escorts</span>
           </NavLink>
-          <p className="leading-relaxed opacity-80">Elite, discreet luxury companionship for discerning gentlemen in Aerocity, Delhi.</p>
+          <p className="leading-relaxed opacity-80">Elite, discreet luxury companionship for discerning gentlemen in Agra.</p>
         </div>
 
         <div className="flex flex-col gap-3">
@@ -46,16 +46,16 @@ const Footer = () => {
         <div className="flex flex-col gap-3">
           <h3 className="font-serif uppercase text-[#f1ba4b]">Contact</h3>
           <div className="flex flex-col gap-2 opacity-70 break-all">
-            <span>Aerocity, New Delhi</span>
+            <span>Agra, Uttar Pradesh</span>
             <span>Available 24 / 7</span>
-            <a href="mailto:booking@aerocity.com" className="w-fit transition-colors duration-300 hover:text-[#f1ba4b] wrap-break-word">booking@aerocity.com</a>
+            <a href="mailto:singhvikash7805@gmail.com" className="w-fit transition-colors duration-300 hover:text-[#f1ba4b] wrap-break-word">singhvikash7805@gmail.com</a>
           </div>
         </div>
       </div>
 
       <div className="h-px w-full bg-linear-to-r from-transparent via-[#f1ba4b]/50 to-transparent" />
 
-      <p className="text-center text-xs text-white/80 px-4 md:px-20 py-6">© {new Date().getFullYear()} Aerocity Escorts. All rights reserved. Adults 18+ only.</p>
+      <p className="text-center text-xs text-white/80 px-4 md:px-20 py-6">© {new Date().getFullYear()} Agra Escorts. All rights reserved. Adults 18+ only.</p>
     </footer>
   );
 };

@@ -11,7 +11,7 @@ const terms = [
   { title: "Cancellations", desc: "Cancellations made more than 24 hours in advance incur no fee. Cancellations within 24 hours may forfeit any deposit paid. No-shows are charged in full." },
   { title: "Privacy", desc: "We maintain strict confidentiality. Clients are similarly expected to respect the privacy of companions and any information shared during engagements." },
   { title: "Intellectual Property", desc: "All content on this website — images, text, design, and marks — is the property of Aerocity Escorts and may not be reproduced without written permission." },
-  { title: "Contact", desc: "For any questions regarding these terms, please contact legal@aerocity.com." },
+  { title: "Contact", desc: "For any questions regarding these terms, please contact singhvikash7805@gmail.com." },
 ]
 
 const TermsAndConditions = () => {

@@ -54,7 +54,7 @@ const AboutUs = () => {
 
       <section className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-16 pt-12 lg:pt-24 px-4 lg:px-16">
         <div className="overflow-hidden rounded-3xl border border-[#f1ba4b]/30 transition duration-300 hover:-translate-y-1 hover:border-[#f1ba4b]/80">
-          <img src={About} alt="Escorts service in delhi" loading="lazy" className="h-full w-full object-cover"/>
+          <img src={About} alt="Escorts service in Agra" loading="lazy" className="h-full w-full object-cover"/>
         </div>
 
         <div className="flex flex-col gap-3">
