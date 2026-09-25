@@ -1,5 +1,5 @@
 import { lazy, useState } from "react";
-import { Phone, MessageCircle, Mail } from "lucide-react"
+import { Phone, MessageCircle } from "lucide-react"
 import { toast } from "react-toastify";
 import { signInWithPopup } from "firebase/auth";
 import { auth, googleProvider } from "../firebase/Firebase";
@@ -31,12 +31,6 @@ const contactInfo = [
     title: "Call Us",
     value: "+91 9762933940",
     link: "tel:+919762933940"
-  },
-  {
-    icon: Mail,
-    title: "Email",
-    value: "singhvikash7805@gmail.com",
-    link: "mailto:singhvikash7805@gmail.com"
   }
 ]
 

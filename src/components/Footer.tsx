@@ -48,7 +48,6 @@ const Footer = () => {
           <div className="flex flex-col gap-2 opacity-70 break-all">
             <span>Agra, Uttar Pradesh</span>
             <span>Available 24 / 7</span>
-            <a href="mailto:singhvikash7805@gmail.com" className="w-fit transition-colors duration-300 hover:text-[#f1ba4b] wrap-break-word">singhvikash7805@gmail.com</a>
           </div>
         </div>
       </div>
