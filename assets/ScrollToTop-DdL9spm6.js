@@ -1,0 +1,1 @@
+import{a as e}from"./rolldown-runtime-CNC7AqOf.js";import{t}from"./react-6C37rxNK.js";import{_ as n}from"./index-B_uSLSBN.js";var r=e(t(),1),i=()=>{let{pathname:e}=n();return(0,r.useEffect)(()=>{window.scrollTo({top:0,left:0,behavior:`smooth`})},[e]),null};export{i as default};
