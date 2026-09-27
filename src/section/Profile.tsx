@@ -18,7 +18,7 @@ const Profile: React.FC<ProfileProps> = ({ id, image, name, age, city, height, l
   return (
     <div key={id} className="group overflow-hidden rounded-3xl border border-[#f1ba4b]/30 bg-[#13100d] shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#f1ba4b]/40 hover:shadow-[0_20px_60px_-20px_rgba(212,181,76,0.2)]">
       <div className="relative aspect-4/5 overflow-hidden">
-        <img src={image} alt="Call girl in Agra" loading="lazy" width={800} height={1000} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+        <img src={image} alt="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" loading="lazy" width={800} height={1000} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"/>
 
         <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/20 to-transparent" />
 
