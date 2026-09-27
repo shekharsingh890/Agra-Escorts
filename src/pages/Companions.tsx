@@ -164,21 +164,20 @@ const Companions = () => {
   return (
     <>
       <Helmet>
-        <title>Agra Companions | Companionship Services in Agra</title>
-        <meta name="description" content="Explore companions in Agra and discover available companionship services. Browse profiles and find companions in Agra based on your preferences." />
-        <meta name="keywords" content="Call girls in Agra, Call girls in fatehabad road Agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
+        <title>Agra Escorts | Agra Escort Service</title>
+        <meta name="description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://www.agraescorts.pro/companions" />
 
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Agra Companions | Companionship Services in Agra" />
-        <meta property="og:description" content="Explore companions in Agra, browse profiles, and discover available companionship services." />
+        <meta property="og:description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
         <meta property="og:url" content="https://www.agraescorts.pro/companions" />
         <meta property="og:site_name" content="Agra Escorts" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Agra Companions | Companionship Services in Agra" />
-        <meta name="twitter:description" content="Browse companion profiles in Agra and explore available companionship services." />
+        <meta name="twitter:description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
 
         <script type="application/ld+json">
           {JSON.stringify({

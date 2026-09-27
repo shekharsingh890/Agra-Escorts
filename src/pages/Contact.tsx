@@ -108,20 +108,19 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Us | Agra</title>
+        <title>Contact Us | Agra Escort Service</title>
 
-        <meta name="description" content="Get in touch with our team for inquiries, assistance, or general information. Contact us using phone, email, or the contact form." />
-        <meta name="keywords" content="Call girls in Agra, Call girls in fatehabad road Agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
+        <meta name="description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
         <link rel="canonical" href="https://www.agraescorts.pro/contact" />
 
         <meta property="og:title" content="Contact Us | Agra" />
-        <meta property="og:description" content="Contact Us | Agra" />
+        <meta property="og:description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
         <meta property="og:url" content="https://www.agraescorts.pro/contact" />
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Contact Us | Agra" />
-        <meta name="twitter:description" content="Reach out to our team for inquiries and support." />
+        <meta name="twitter:description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
 
         <script type="application/ld+json">
           {JSON.stringify({

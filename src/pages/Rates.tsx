@@ -22,21 +22,20 @@ const Rates = () => {
   return (
     <>
       <Helmet>
-        <title>Rates | Agra Escorts</title>
+        <title>Rates | Agra Escort Service</title>
 
-        <meta name="description" content="View our pricing plans and service packages. Choose the option that best fits your needs." />
-        <meta name="keywords" content="Call girls in Agra, Call girls in fatehabad road Agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
+        <meta name="description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://www.agraescorts.pro/rates" />
 
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Rates | Agra Escorts" />
-        <meta property="og:description" content="Explore our pricing plans and service packages." />
+        <meta property="og:description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
         <meta property="og:url" content="https://www.agraescorts.pro/rates" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Rates | Agra Escorts" />
-        <meta name="twitter:description" content="Browse our pricing plans and packages." />
+        <meta name="twitter:description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
 
         <script type="application/ld+json">
           {JSON.stringify({

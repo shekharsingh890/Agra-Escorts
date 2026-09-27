@@ -95,20 +95,19 @@ const Home = () => {
       <Helmet>
         <title>Agra Escorts | Verified Escort Services in Agra</title>
 
-        <meta name="description" content="Find and explore escort services in Agra. Browse profiles, discover available companionship services, and connect with Agra Escorts." />
-        <meta name="keywords" content="Call girls in Agra, Call girls in fatehabad road Agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
+        <meta name="description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://www.agraescorts.pro/" />
 
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Agra Escorts | Verified Escort Services in Agra" />
-        <meta property="og:description" content="Explore escort services in Agra. Browse profiles and discover companionship services available in Agra." />
+        <meta property="og:description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
         <meta property="og:url" content="https://www.agraescorts.pro/" />
         <meta property="og:site_name" content="Agra Escorts" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Agra Escorts | Verified Escort Services in Agra" />
-        <meta name="twitter:description" content="Explore escort services in Agra, browse profiles, and discover available companionship services." />
+        <meta name="twitter:description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
 
         <script type="application/ld+json">
           {JSON.stringify({

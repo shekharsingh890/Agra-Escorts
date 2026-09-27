@@ -20,21 +20,20 @@ const TermsAndConditions = () => {
   return (
     <>
       <Helmet>
-        <title>Terms & Conditions | Agra Escorts</title>
+        <title>Terms & Conditions | Agra Escort Service</title>
 
-        <meta name="description" content="Read our Terms & Conditions to understand the rules, responsibilities, and legal terms governing the use of our website and services." />
-        <meta name="keywords" content="Call girls in Agra, Call girls in fatehabad road Agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
+        <meta name="description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://www.agraescorts.pro/terms-and-conditions" />
 
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Terms & Conditions | Agra Escorts" />
-        <meta property="og:description" content="Review the Terms & Conditions that govern the use of our website and services." />
+        <meta property="og:description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
         <meta property="og:url" content="https://www.agraescorts.pro/terms-and-conditions" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Terms & Conditions | Agra Escorts" />
-        <meta name="twitter:description" content="Read our Terms & Conditions to understand the rules and policies for using our website." />
+        <meta name="twitter:description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
 
         <script type="application/ld+json">
           {JSON.stringify({

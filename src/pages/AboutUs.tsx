@@ -16,21 +16,20 @@ const AboutUs = () => {
   return (
     <>
       <Helmet>
-        <title>About Us | Agra Escorts</title>
+        <title>About Us | Agra Escort Service</title>
 
-        <meta name="description" content="Learn more about our company, our mission, our values, and our commitment to delivering quality services to our clients." />
-        <meta name="keywords" content="Call girls in Agra, Call girls in fatehabad road Agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
+        <meta name="description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://www.agraescorts.pro/about-us" />
 
         <meta property="og:type" content="website" />
         <meta property="og:title" content="About Us | Agra Escorts" />
-        <meta property="og:description" content="Learn more about our company, our team, and the services we provide." />
+        <meta property="og:description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
         <meta property="og:url" content="https://www.agraescorts.pro/about-us" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="About Us | Agra Escorts" />
-        <meta name="twitter:description" content="Discover our story, mission, and commitment to serving our clients." />
+        <meta name="twitter:description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
 
         <script type="application/ld+json">
           {JSON.stringify({
