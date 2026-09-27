@@ -128,7 +128,7 @@ const Home = () => {
       </Helmet>
 
       <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
-        <img src={hero} alt="Luxury lobby ambiance" width={1600} height={1000} className="absolute inset-0 h-full w-full object-cover"/>
+        <img src={hero} alt="Agra Escorts Service" width={1600} height={1000} className="absolute inset-0 h-full w-full object-cover"/>
 
         <div className="absolute inset-0 bg-linear-to-b from-[#1f1d1b]/40 via-[#161513]/70 to-[#0f0f0e]/90" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(212,181,76,0.25),transparent_40%)]" />
