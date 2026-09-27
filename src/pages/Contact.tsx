@@ -31,6 +31,12 @@ const contactInfo = [
     title: "Call Us",
     value: "+91 9762933940",
     link: "tel:+919762933940"
+  },
+  {
+    icon: Phone,
+    title: "Call Us",
+    value: "+91 6387201873",
+    link: "tel:+916387201873"
   }
 ]
 

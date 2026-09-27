@@ -48,6 +48,8 @@ const Footer = () => {
           <div className="flex flex-col gap-2 opacity-70 break-all">
             <span>Agra, Uttar Pradesh</span>
             <span>Available 24 / 7</span>
+            <a href="tel:+919762933940">+91 9762933940</a>
+            <a href="tel:+919762933940">+91 6387201873</a>
           </div>
         </div>
       </div>
