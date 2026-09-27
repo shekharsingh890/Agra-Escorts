@@ -51,21 +51,21 @@ const Services = () => {
   return (
     <>
       <Helmet>
-        <title>Services | Areocity Delhi</title>
+        <title>Services | Agra</title>
 
-        <meta name="description" content="Discover services, local information, and premium experiences in Aerocity, New Delhi. Explore dining, hotels, travel resources, and visitor guides." />
-        <meta name="keywords" content="Call girls in delhi, Escorts service in delhi, Call girls in aerocity delhi, Escorts service in aerocity Delhi" />
+        <meta name="description" content="Discover services, local information, and premium experiences in Fatehabad Road, Agra. Explore dining, hotels, travel resources, and visitor guides." />
+        <meta name="keywords" content="Call girls in Agra, Call girls in fatehabad road Agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        {/* <link rel="canonical" href="https://yourdomain.com/services" /> */}
+        <link rel="canonical" href="https://www.agraescorts.pro/services" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Services | Areocity Delhi" />
-        <meta property="og:description" content="Explore services and visitor information for Aerocity, New Delhi." />
-        {/* <meta property="og:url" content="https://yourdomain.com/services" /> */}
+        <meta property="og:title" content="Services | Agra" />
+        <meta property="og:description" content="Explore services and visitor information for Fatehabad Road, Agra." />
+        <meta property="og:url" content="https://www.agraescorts.pro/services" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Services | Areocity Delhi" />
-        <meta name="twitter:description" content="Discover services and local information for Aerocity, New Delhi." />
+        <meta name="twitter:title" content="Services | Agra" />
+        <meta name="twitter:description" content="Discover services and local information for Fatehabad Road, Agra." />
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -78,11 +78,11 @@ const Services = () => {
               description: service.desc,
               provider: {
                 "@type": "EntertainmentBusiness",
-                name: "Aerocity Escorts",
+                name: "Agra Escorts",
                 address: {
                   "@type": "PostalAddress",
-                  addressLocality: "Aerocity",
-                  addressRegion: "Delhi",
+                  addressLocality: "Agra",
+                  addressRegion: "Uttar Pradesh",
                   addressCountry: "IN"
                 }
               }

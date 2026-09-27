@@ -1,277 +1,236 @@
 import * as Icons from '../assets/companions'
 import { lazy, useState } from "react"
-import { NavLink } from "react-router-dom"
+import { Helmet } from 'react-helmet-async'
 
 const Hero = lazy(()=>import('../section/Hero'))
+const Profile = lazy(()=>import('../section/Profile'))
 
 const AVAILABILITY = ["All", "24/7", "Evenings", "By Appointment"];
-const NATIONALITY = ["All", "Indian", "Russian", "French", "American"];
-const AGE = ["All", "18-22", "22-25", "26-29", "30+"];
-const LOCATION = ["All", "Agra", "Delhi", "Gurgaon", "Noida"];
+const AGE = ["All", "18-21", "22-25", "26-29", "30+"];
 
 const profiles = [
   {
     id: 1,
     image: Icons.profile1,
-    name: "Sophia",
-    age: 25,
-    city: "Delhi",
-    height: "5'7\"",
-    languages: "English, Hindi",
+    name: "Ananya",
+    age: 24,
+    city: "Agra",
+    height: "5'4\"",
+    languages: "Hindi, English",
     availability: "24/7",
     nationality: "Indian",
-    tags: ["VIP", "Independent"],
-    description: "Sophisticated, well-travelled and impeccably mannered companion for the discerning gentleman.",
+    tags: ["VIP"],
+    description: "Easygoing and friendly, Ananya enjoys good conversations, relaxed evenings, and meeting new people.",
   },
   {
     id: 2,
     image: Icons.profile2,
-    name: "Isabella",
-    age: 27,
-    city: "Gurgaon",
-    height: "5'6\"",
-    languages: "English, French",
+    name: "Priya",
+    age: 28,
+    city: "Agra",
+    height: "5'5\"",
+    languages: "Hindi, English",
     availability: "Evenings",
-    nationality: "French",
+    nationality: "Indian",
     tags: ["VIP"],
-    description: "Sophisticated, well-travelled and impeccably mannered companion for the discerning gentleman.",
+    description: "Warm, cheerful, and easy to talk to. Priya loves good company and keeping things comfortable and relaxed.",
   },
   {
     id: 3,
     image: Icons.profile3,
-    name: "Olivia",
-    age: 24,
-    city: "Delhi",
-    height: "5'8\"",
-    languages: "English, Spanish",
+    name: "Riya",
+    age: 22,
+    city: "Agra",
+    height: "5'3\"",
+    languages: "Hindi",
     availability: "By Appointment",
-    nationality: "Russian",
-    tags: ["Independent"],
-    description: "Sophisticated, well-travelled and impeccably mannered companion for the discerning gentleman.",
+    nationality: "Indian",
+    tags: [],
+    description: "Young, confident, and outgoing, Riya enjoys music, travel, and spending time with interesting people.",
   },
   {
     id: 4,
-    image: Icons.profile1,
-    name: "Ava",
-    age: 26,
-    city: "Noida",
-    height: "5'5\"",
-    languages: "English, Italian",
+    image: Icons.profile4,
+    name: "Neha",
+    age: 30,
+    city: "Agra",
+    height: "5'6\"",
+    languages: "Hindi",
     availability: "24/7",
     nationality: "Indian",
-    tags: ["VIP"],
-    description: "Sophisticated, well-travelled and impeccably mannered companion for the discerning gentleman.",
+    tags: [],
+    description: "Calm and confident with a friendly personality. Neha enjoys relaxed conversations and pleasant company.",
   },
   {
     id: 5,
-    image: Icons.profile3,
-    name: "Mia",
-    age: 23,
-    city: "Noida",
+    image: Icons.profile5,
+    name: "Simran",
+    age: 26,
+    city: "Agra",
     height: "5'4\"",
-    languages: "English, German",
+    languages: "Hindi",
     availability: "Evenings",
-    nationality: "French",
-    tags: ["Independent"],
-    description: "Sophisticated, well-travelled and impeccably mannered companion for the discerning gentleman.",
+    nationality: "Indian",
+    tags: [],
+    description: "Fun-loving and down to earth, Simran likes good food, movies, and meeting people with a positive vibe.",
   },
   {
     id: 6,
-    image: Icons.profile2,
-    name: "Amelia",
-    age: 28,
-    city: "Gurgaon",
-    height: "5'9\"",
-    languages: "English, Portuguese",
+    image: Icons.profile6,
+    name: "Kavya",
+    age: 32,
+    city: "Agra",
+    height: "5'5\"",
+    languages: "Hindi, English",
     availability: "By Appointment",
-    nationality: "French",
-    tags: ["VIP", "Independent"],
-    description: "Sophisticated, well-travelled and impeccably mannered companion for the discerning gentleman.",
+    nationality: "Indian",
+    tags: ["VIP"],
+    description: "Elegant but easygoing, Kavya enjoys meaningful conversations and making every meeting feel comfortable.",
   },
   {
     id: 7,
-    image: Icons.profile1,
-    name: "Elisha",
+    image: Icons.profile7,
+    name: "Pooja",
     age: 27,
-    city: "Aerocity",
-    height: "5'6\"",
-    languages: "English, French",
+    city: "Agra",
+    height: "5'2\"",
+    languages: "Hindi",
     availability: "24/7",
-    nationality: "American",
-    tags: ["VIP"],
-    description: "Sophisticated, well-travelled and impeccably mannered companion for the discerning gentleman.",
+    nationality: "Indian",
+    tags: [],
+    description: "Friendly, cheerful, and approachable. Pooja enjoys casual conversations and spending time in good company.",
   },
   {
     id: 8,
-    image: Icons.profile3,
-    name: "Alexandra",
-    age: 27,
-    city: "Delhi",
+    image: Icons.profile8,
+    name: "Ishita",
+    age: 25,
+    city: "Agra",
     height: "5'6\"",
-    languages: "English, French",
+    languages: "Hindi",
     availability: "By Appointment",
-    nationality: "Russian",
-    tags: ["VIP","Independent"],
-    description: "Sophisticated, well-travelled and impeccably mannered companion for the discerning gentleman.",
+    nationality: "Indian",
+    tags: ["VIP"],
+    description: "Confident and positive, Ishita enjoys travelling, trying new places, and having a good time with great company.",
   },
   {
     id: 9,
-    image: Icons.profile1,
-    name: "Ava Adams",
-    age: 27,
-    city: "Aerocity",
-    height: "5'9\"",
-    languages: "English, French",
+    image: Icons.profile9,
+    name: "Meera",
+    age: 21,
+    city: "Agra",
+    height: "5'3\"",
+    languages: "Hindi",
     availability: "24/7",
-    nationality: "American",
-    tags: ["VIP"],
-    description: "Sophisticated, well-travelled and impeccably mannered companion for the discerning gentleman.",
+    nationality: "Indian",
+    tags: [],
+    description: "Sweet, social, and easygoing, Meera enjoys music, movies, and getting to know new people.",
   },
   {
     id: 10,
-    image: Icons.profile2,
-    name: "Natasha",
-    age: 27,
-    city: "Gurgaon",
-    height: "5'8\"",
-    languages: "English, French",
+    image: Icons.profile10,
+    name: "Nisha",
+    age: 35,
+    city: "Agra",
+    height: "5'5\"",
+    languages: "Hindi, English",
     availability: "Evenings",
-    nationality: "American",
+    nationality: "Indian",
     tags: ["VIP"],
-    description: "Sophisticated, well-travelled and impeccably mannered companion for the discerning gentleman.",
+    description: "Mature, confident, and friendly. Nisha appreciates good conversations, relaxed settings, and genuine company.",
   },
-]
+];
 
 const Companions = () => {
-  const [avail, setAvail] = useState("All");
-  const [nat, setNat] = useState("All");
+  const [availability, setAvailability] = useState("All");
   const [age, setAge] = useState("All");
-  const [loc, setLoc] = useState("All");
   const [vip, setVip] = useState(false);
-  const [indep, setIndep] = useState(false);
 
-  const filtered = profiles.filter(
-  (p) =>
-    (avail === "All" || p.availability === avail) &&
-    (nat === "All" || p.nationality === nat) &&
-    (loc === "All" || p.city === loc) &&
-    (age === "All" || (age === "22-25" ? p.age <= 25 : p.age >= 26)) &&
-    (!vip || p.tags.includes("VIP")) &&
-    (!indep || p.tags.includes("Independent"))
-  );
+  const filtered = profiles.filter((p) => {
+    const availabilityMatch = availability === "All" || p.availability === availability;
+
+    const ageMatch =
+      age === "All" ||
+      (age === "18-21" && p.age >= 18 && p.age <= 21) ||
+      (age === "22-25" && p.age >= 22 && p.age <= 25) ||
+      (age === "26-29" && p.age >= 26 && p.age <= 29) ||
+      (age === "30+" && p.age >= 30);
+
+    const vipMatch = !vip || p.tags.includes("VIP");
+
+    return availabilityMatch && ageMatch && vipMatch;
+  });
 
   return (
     <>
+      <Helmet>
+        <title>Agra Companions | Companionship Services in Agra</title>
+        <meta name="description" content="Explore companions in Agra and discover available companionship services. Browse profiles and find companions in Agra based on your preferences." />
+        <meta name="keywords" content="Call girls in Agra, Call girls in fatehabad road Agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <link rel="canonical" href="https://www.agraescorts.pro/companions" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Agra Companions | Companionship Services in Agra" />
+        <meta property="og:description" content="Explore companions in Agra, browse profiles, and discover available companionship services." />
+        <meta property="og:url" content="https://www.agraescorts.pro/companions" />
+        <meta property="og:site_name" content="Agra Escorts" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Agra Companions | Companionship Services in Agra" />
+        <meta name="twitter:description" content="Browse companion profiles in Agra and explore available companionship services." />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: "Agra Companions",
+            url: "https://www.agraescorts.pro/companions",
+            description: "Explore companions and companionship services available in Agra.",
+            isPartOf: {
+              "@type": "WebSite",
+              name: "Agra Escorts",
+              url: "https://www.agraescorts.pro/"
+            }
+          })}
+        </script>
+      </Helmet>
+
       <Hero badge="Our companions" title1="" title2="Elite" title3="profiles" description="Each companion is personally verified and interviewed by our concierge team." />
 
-      <section className="mx-auto max-w-7xl px-4 pt-12 lg:pt-24">
-        <div className="rounded-3xl border border-[#f1ba4b]/30 bg-[#13100d] p-6 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm">
-          <div className="grid gap-4 md:grid-cols-4">
-            <label className="block">
-              <span className="mb-2 block text-xs uppercase tracking-widest text-[#f1ba4b]">Age</span>
-
-              <select value={age} onChange={(e) => setAge(e.target.value)} className="w-full rounded-xl border border-[#f1ba4b]/30 bg-[#13100d]/80 px-4 py-2.5 text-sm outline-none transition-all duration-300 focus:border-[#f1ba4b] focus:ring-2 focus:ring-[#13100d]/20">
-                {AGE.map((item) => (
-                  <option key={item} value={item} className="bg-[#13100d]">
-                    {item}
-                  </option>
-                ))}
-              </select>
-            </label>
-
-            <label className="block">
-              <span className="mb-2 block text-xs uppercase tracking-widest text-[#f1ba4b]">Location</span>
-              <select value={loc} onChange={(e) => setLoc(e.target.value)} className="w-full rounded-xl border border-[#f1ba4b]/30 bg-[#13100d]/80 px-4 py-2.5 text-sm text-[#f5f3eb] outline-none transition-all duration-300 focus:border-[#f1ba4b] focus:ring-2 focus:ring-[#13100d]/20">
-                {LOCATION.map((item) => (
-                  <option key={item} value={item} className="bg-[#13100d]">
-                    {item}
-                  </option>
-                ))}
-              </select>
-            </label>
-
-            <label className="block">
-              <span className="mb-2 block text-xs uppercase tracking-widest text-[#f1ba4b]">Availability</span>
-              <select value={avail} onChange={(e) => setAvail(e.target.value)} className="w-full rounded-xl border border-[#f1ba4b]/30 bg-[#13100d]/80 px-4 py-2.5 text-sm outline-none transition-all duration-300 focus:border-[#f1ba4b] focus:ring-2 focus:ring-[#13100d]/20">
-                {AVAILABILITY.map((item) => (
-                  <option key={item} value={item} className="bg-[#13100d]">
-                    {item}
-                  </option>
-                ))}
-              </select>
-            </label>
-
-            <label className="block">
-              <span className="mb-2 block text-xs uppercase tracking-widest text-[#f1ba4b]">Nationality</span>
-              <select value={nat} onChange={(e) => setNat(e.target.value)} className="w-full rounded-xl border border-[#f1ba4b]/30 bg-[#13100d]/80 px-4 py-2.5 text-sm outline-none transition-all duration-300 focus:border-[#f1ba4b] focus:ring-2 focus:ring-[#13100d]/20">
-                {NATIONALITY.map((item) => (
-                  <option key={item} value={item} className="bg-[#13100d]">
-                    {item}
-                  </option>
-                ))}
-              </select>
-            </label>
-          </div>
-
-          <div className="mt-4 flex flex-wrap gap-3">
-            <button onClick={() => setIndep(!indep)} className={`rounded-full px-5 py-2 text-xs font-medium uppercase tracking-widest transition-all duration-300 ${indep ? "bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] text-[#13100d]" : "border border-[#f1ba4b] text-[#f1ba4b] hover:bg-[#f1ba4b] hover:text-[#13100d]"}`}>
-              Independent
-            </button>
-            <button onClick={() => setVip(!vip)} className={`rounded-full px-5 py-2 text-xs font-medium uppercase tracking-widest transition-all duration-300 ${vip ? "bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] text-[#13100d]" : "border border-[#f1ba4b] text-[#f1ba4b] hover:bg-[#f1ba4b] hover:text-[#13100d]"}`}>
-              VIP
-            </button>
-          </div>
+      <section className="flex items-end gap-4 mx-auto max-w-5xl rounded-3xl bg-[#13100d] border border-[#f1ba4b]/30 p-8 mt-12 md:mt-24">
+        <div className='flex flex-col gap-2'>
+          <label htmlFor="age" className='text-xs uppercase tracking-widest text-[#f1ba4b]'>Age</label>
+          <select name="age" id="age" value={age} onChange={(e)=>setAge(e.target.value)} className="rounded-xl border border-[#f1ba4b]/30 bg-[#13100d]/80 px-4 py-2 text-sm outline-none transition-all duration-300 focus:border-[#f1ba4b] focus:ring-2 focus:ring-[#13100d]/20">
+            {AGE.map((item) => (
+              <option key={item} value={item}>{item}</option>
+            ))}
+          </select>
         </div>
+
+        <div className='flex flex-col gap-2'>
+          <label htmlFor="age" className='text-xs uppercase tracking-widest text-[#f1ba4b]'>Availability</label>
+          <select name="age" id="age" value={availability} onChange={(e)=>setAvailability(e.target.value)} className="rounded-xl border border-[#f1ba4b]/30 bg-[#13100d]/80 px-4 py-2 text-sm outline-none transition-all duration-300 focus:border-[#f1ba4b] focus:ring-2 focus:ring-[#13100d]/20">
+            {AVAILABILITY.map((item) => (
+              <option key={item} value={item}>{item}</option>
+            ))}
+          </select>
+        </div>
+
+        <button onClick={() => setVip(!vip)} className={`rounded-full px-5 py-2 text-xs font-medium uppercase tracking-widest border ${vip ? "border-none bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] text-[#13100d]" : "border-[#f1ba4b] text-[#f1ba4b]"}`}>
+          VIP
+        </button>
       </section>
 
-      <section className="mx-auto max-w-7xl grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-4 py-12 lg:py-24">
-        {filtered.map((p) => (
-          <div key={p.id} className="group overflow-hidden rounded-3xl border border-[#f1ba4b]/30 bg-[#13100d] shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#f1ba4b]/40 hover:shadow-[0_20px_60px_-20px_rgba(212,181,76,0.2)]">
-            <div className="relative aspect-4/5 overflow-hidden">
-              <img src={p.image} alt={p.name} loading="lazy" width={800} height={1000} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"/>
-
-              <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/20 to-transparent" />
-
-              {p.tags.length > 0 ? (
-                <div className="absolute left-3 top-3 flex gap-2">
-                  {p.tags.map((t) => (<span key={t} className="rounded-full border border-[#f1ba4b]/30 bg-[#13100d]/70 px-3 py-1 text-[10px] uppercase tracking-widest text-[#f1ba4b] backdrop-blur-md">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              ) : null}
-
-              <div className="absolute bottom-0 w-full p-5">
-                <h3 className="text-2xl font-serif font-normal">{p.name}</h3>
-                <p className="text-xs text-[#f1ba4b]">
-                  {p.age} yrs · {p.height} · {p.city}
-                </p>
-              </div>
-            </div>
-
-            <div className="space-y-2 p-5 text-xs text-[#b8b2a7]">
-              <div>
-                Languages:{" "}
-                <span className="text-[#f5f3eb]">{p.languages}</span>
-              </div>
-              <div>
-                Availability:{" "}
-                <span className="text-[#f5f3eb]">{p.availability}</span>
-              </div>
-              <p className="line-clamp-2 leading-6">{p.description}</p>
-
-              <NavLink to="/contact" className="mt-3 block rounded-full border border-[#f1ba4b] px-4 py-2.5 text-center text-[11px] font-medium uppercase tracking-widest text-[#f1ba4b] transition-all duration-300 hover:bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] hover:text-[#13100d]">
-                View Details
-              </NavLink>
-            </div>
-          </div>
-        ))}
-
+      <section className="mx-auto max-w-7xl grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-4 lg:px-16 py-12 md:py-24">
         {filtered.length === 0 ? (
           <p className="col-span-full text-center">
             No companions match your filters.
           </p>
-        ) : null}
+        ) : 
+        filtered.map((profile) => (
+          <Profile {...profile} />
+        ))}
       </section>
     </>
   )

@@ -16,41 +16,41 @@ const AboutUs = () => {
   return (
     <>
       <Helmet>
-        <title>About Us | Areocity Escorts</title>
+        <title>About Us | Agra Escorts</title>
 
         <meta name="description" content="Learn more about our company, our mission, our values, and our commitment to delivering quality services to our clients." />
-        <meta name="keywords" content="Call girls in delhi, Escorts service in delhi, Call girls in aerocity delhi, Escorts service in aerocity Delhi" />
+        <meta name="keywords" content="Call girls in Agra, Call girls in fatehabad road Agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        {/* <link rel="canonical" href="https://yourdomain.com/about-us" /> */}
+        <link rel="canonical" href="https://www.agraescorts.pro/about-us" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="About Us | Areocity Escorts" />
+        <meta property="og:title" content="About Us | Agra Escorts" />
         <meta property="og:description" content="Learn more about our company, our team, and the services we provide." />
-        {/* <meta property="og:url" content="https://yourdomain.com/about-us" /> */}
+        <meta property="og:url" content="https://www.agraescorts.pro/about-us" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About Us | Areocity Escorts" />
+        <meta name="twitter:title" content="About Us | Agra Escorts" />
         <meta name="twitter:description" content="Discover our story, mission, and commitment to serving our clients." />
 
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "EntertainmentBusiness",
-            name: "Aerocity Escorts",
-            // url: "https://yourdomain.com",
+            name: "Agra Escorts",
+            url: "https://www.agraescorts.pro",
             description: "Learn more about our company, our mission, our values, and our commitment to delivering quality services to our clients.",
             address: {
               "@type": "PostalAddress",
-              addressLocality: "Aerocity",
-              addressRegion: "Delhi",
+              addressLocality: "Agra",
+              addressRegion: "Uttar Pradesh",
               addressCountry: "IN"
             },
-            telephone: "+91 9999999999"
+            telephone: "+91 9762933940"
           })}
         </script>
       </Helmet>
 
-      <Hero badge="About" title1="The" title2="Aerocity Escorts" title3="story" description="Discover our journey, our commitment to quality, and our focus on delivering a trusted and professional experience for every customer." />
+      <Hero badge="About" title1="The" title2="Agra Escorts" title3="story" description="Discover our journey, our commitment to quality, and our focus on delivering a trusted and professional experience for every customer." />
 
       <section className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-16 pt-12 lg:pt-24 px-4 lg:px-16">
         <div className="overflow-hidden rounded-3xl border border-[#f1ba4b]/30 transition duration-300 hover:-translate-y-1 hover:border-[#f1ba4b]/80">

@@ -1,3 +1,10 @@
-export { default as profile1 } from "./profile1.jpg";
-export { default as profile2 } from "./profile2.jpg";
-export { default as profile3 } from "./profile3.jpg";
+export { default as profile1 } from "./model1.jpg";
+export { default as profile2 } from "./model2.jpg";
+export { default as profile3 } from "./model3.jpg";
+export { default as profile4 } from "./model4.jpg";
+export { default as profile5 } from "./model5.jpg";
+export { default as profile6 } from "./model6.jpg";
+export { default as profile7 } from "./model7.jpg";
+export { default as profile8 } from "./model8.jpg";
+export { default as profile9 } from "./model9.jpg";
+export { default as profile10 } from "./model10.jpg";

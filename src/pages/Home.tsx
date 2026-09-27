@@ -1,8 +1,12 @@
 import { NavLink } from "react-router-dom"
 import hero from "../assets/hero.jpg"
 import * as Icons from '../assets/companions'
-import Faqs from "../section/Faqs";
-import Hero from "../section/Hero";
+import { Helmet } from "react-helmet-async"
+import { lazy } from "react"
+
+const Hero = lazy(()=>import('../section/Hero'))
+const Profile = lazy(()=>import('../section/Profile'))
+const Faqs = lazy(()=>import('../section/Faqs'))
 
 const reasons = [
   { icon: "★", title: "Great Companions", text: "Handpicked companions who are friendly, polished, and easy to be around." },
@@ -13,13 +17,61 @@ const reasons = [
   { icon: "→", title: "Quick & Easy Booking", text: "Book in just a few minutes through WhatsApp, phone, or email." },
 ];
 
-const featured = [
-  { id: 1, image:Icons.profile1, name: "Sophia", age: 25, city: "Delhi", height: "5'7\"", languages: "English, Hindi" },
-  { id: 2, image:Icons.profile2, name: "Isabella", age: 27, city: "Gurgaon", height: "5'6\"", languages: "English, French"},
-  { id: 3, image:Icons.profile3, name: "Olivia", age: 24, city: "Delhi", height: "5'8\"", languages: "English, Spanish" },
-  { id: 4, image:Icons.profile1, name: "Ava", age: 26, city: "Noida", height: "5'5\"", languages: "English, Italian" },
-  { id: 5, image:Icons.profile3, name: "Mia", age: 23, city: "Noida", height: "5'4\"", languages: "English, German" },
-  { id: 6, image:Icons.profile2, name: "Amelia", age: 28, city: "Gurgaon", height: "5'9\"", languages: "English, Portuguese" },
+const profiles = [
+  {
+    id: 1,
+    image: Icons.profile1,
+    name: "Ananya",
+    age: 24,
+    city: "Agra",
+    height: "5'4\"",
+    languages: "Hindi, English"
+  },
+  {
+    id: 2,
+    image: Icons.profile2,
+    name: "Priya",
+    age: 28,
+    city: "Agra",
+    height: "5'5\"",
+    languages: "Hindi, English"
+  },
+  {
+    id: 3,
+    image: Icons.profile3,
+    name: "Riya",
+    age: 22,
+    city: "Agra",
+    height: "5'3\"",
+    languages: "Hindi"
+  },
+  {
+    id: 4,
+    image: Icons.profile4,
+    name: "Neha",
+    age: 30,
+    city: "Agra",
+    height: "5'6\"",
+    languages: "Hindi"
+  },
+  {
+    id: 5,
+    image: Icons.profile5,
+    name: "Simran",
+    age: 26,
+    city: "Agra",
+    height: "5'4\"",
+    languages: "Hindi"
+  },
+  {
+    id: 6,
+    image: Icons.profile6,
+    name: "Kavya",
+    age: 32,
+    city: "Agra",
+    height: "5'5\"",
+    languages: "Hindi, English"
+  },
 ];
 
 const services = ["Russian Escorts", "College Girls", "Model Escorts", "VIP Outcall", "Incall Service", "Dinner Date"];
@@ -40,6 +92,42 @@ const faqs = [
 const Home = () => {
   return (
     <>
+      <Helmet>
+        <title>Agra Escorts | Verified Escort Services in Agra</title>
+
+        <meta name="description" content="Find and explore escort services in Agra. Browse profiles, discover available companionship services, and connect with Agra Escorts." />
+        <meta name="keywords" content="Call girls in Agra, Call girls in fatehabad road Agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <link rel="canonical" href="https://www.agraescorts.pro/" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Agra Escorts | Verified Escort Services in Agra" />
+        <meta property="og:description" content="Explore escort services in Agra. Browse profiles and discover companionship services available in Agra." />
+        <meta property="og:url" content="https://www.agraescorts.pro/" />
+        <meta property="og:site_name" content="Agra Escorts" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Agra Escorts | Verified Escort Services in Agra" />
+        <meta name="twitter:description" content="Explore escort services in Agra, browse profiles, and discover available companionship services." />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "EntertainmentBusiness",
+            name: "Agra Escorts",
+            url: "https://www.agraescorts.pro/",
+            description: "Escort and companionship services in Agra.",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Agra",
+              addressRegion: "Uttar Pradesh",
+              addressCountry: "IN"
+            },
+            telephone: "+91 9762933940"
+          })}
+        </script>
+      </Helmet>
+
       <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
         <img src={hero} alt="Luxury lobby ambiance" width={1600} height={1000} className="absolute inset-0 h-full w-full object-cover"/>
 
@@ -85,43 +173,13 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Featured companions */}
-      <Hero badge="Featured Companions" title1="Meet our" title2="elite" title3="companions" description="Meet some of our most popular companions, handpicked for memorable experiences." />
+      {/* Companions */}
+      <Hero badge="profiles Companions" title1="Meet our" title2="elite" title3="companions" description="Meet some of our most popular companions, handpicked for memorable experiences." />
 
-      <section className="mx-auto max-w-7xl px-4 lg:px-16 pt-12 md:pt-24">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {featured.map((p) => (
-            <div key={p.id} className="group overflow-hidden rounded-3xl border border-[#f1ba4b]/30 bg-[#13100d] shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#f1ba4b]/40 hover:shadow-[0_20px_60px_-20px_rgba(212,181,76,0.2)]">
-              <div className="relative aspect-4/5 overflow-hidden">
-                <img src={p.image} alt={p.name} loading="lazy" width={800} height={1000} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"/>
-
-                <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent" />
-
-                <div className="absolute bottom-0 p-6">
-                  <h3 className="text-2xl font-serif font-normal opacity-80">{p.name}</h3>
-                  <p className="text-sm text-[#f1ba4b]">{p.age} yrs · {p.city}</p>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-2 p-6 text-xs">
-                <div>
-                  Height:{" "}
-                  <span className="opacity-80">{p.height}</span>
-                </div>
-                <div>
-                  Languages:{" "}
-                  <span className="opacity-80">{p.languages}</span>
-                </div>
-              </div>
-
-              <div className="p-6 pt-0">
-                <NavLink to="/companions" className="block rounded-full border border-[#f1ba4b] px-5 py-3 text-center text-xs font-medium uppercase tracking-widest text-[#f1ba4b] transition-all duration-300 hover:bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] hover:text-[#13100d]">
-                  View Profile
-                </NavLink>
-              </div>
-            </div>
-          ))}
-        </div>
+      <section className="mx-auto max-w-7xl grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-4 lg:px-16 pt-12 md:pt-24">
+        {profiles.map((profile) => (
+          <Profile {...profile} />
+        ))}
       </section>
 
       {/* Services */}

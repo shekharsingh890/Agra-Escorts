@@ -57,11 +57,11 @@ const faqs = [
   },
   {
     q: "What is the difference between Incall and Outcall?",
-    a: "Incall: You visit our girl's place (mostly 5-star hotels in Aerocity). Outcall: Girl comes to your hotel or residence."
+    a: "Incall: You visit our girl's place (mostly 5-star hotels in Agra). Outcall: Girl comes to your hotel or residence."
   },
   {
     q: "Do you have Russian and Foreign Escorts?",
-    a: "Yes, we have beautiful Russian, Ukrainian, and other foreign escorts available regularly in Aerocity."
+    a: "Yes, we have beautiful Russian, Ukrainian, and other foreign escorts available regularly in Agra."
   },
   {
     q: "What if I want to cancel the booking?",
@@ -108,41 +108,37 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Us | Areocity Delhi</title>
-        <meta name="description" content="Get in touch with our team for inquiries, assistance, or general information. Contact us using phone, email, or the contact form." />
-        <meta name="keywords" content="Call girls in delhi, Escorts service in delhi, Call girls in aerocity delhi, Escorts service in aerocity Delhi" />
-        {/* <link rel="canonical" href="https://yourdomain.com/contact" /> */}
+        <title>Contact Us | Agra</title>
 
-        <meta property="og:title" content="Contact Us | Areocity Delhi" />
-        <meta property="og:description" content="Contact Us | Areocity Delhi" />
-        {/* <meta property="og:url" content="https://yourdomain.com/contact" /> */}
+        <meta name="description" content="Get in touch with our team for inquiries, assistance, or general information. Contact us using phone, email, or the contact form." />
+        <meta name="keywords" content="Call girls in Agra, Call girls in fatehabad road Agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
+        <link rel="canonical" href="https://www.agraescorts.pro/contact" />
+
+        <meta property="og:title" content="Contact Us | Agra" />
+        <meta property="og:description" content="Contact Us | Agra" />
+        <meta property="og:url" content="https://www.agraescorts.pro/contact" />
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact Us | Areocity Delhi" />
+        <meta name="twitter:title" content="Contact Us | Agra" />
         <meta name="twitter:description" content="Reach out to our team for inquiries and support." />
 
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "EntertainmentBusiness",
-            name: "Aerocity Escorts",
-            // url: "https://yourdomain.com",
-            // telephone: "+91 9762933940",
+            name: "Agra Escorts",
+            url: "https://www.agraescorts.pro",
+            telephone: "+91 9762933940",
             address: {
               "@type": "PostalAddress",
-              addressLocality: "Aerocity",
-              addressRegion: "Delhi",
+              addressLocality: "Agra",
+              addressRegion: "Uttar Pradesh",
               addressCountry: "IN"
-            },
-            geo: {
-              "@type": "GeoCoordinates",
-              latitude: "28.5488",
-              longitude: "77.1215"
             },
             openingHours: "Mo-Su 00:00-23:59"
           })}
-          </script>
+        </script>
       </Helmet>
 
       <Hero badge="Contact" title1="Reserve your" title2="evening" title3="" description="Our team is available 24/7 and usually replies within a few minutes." />

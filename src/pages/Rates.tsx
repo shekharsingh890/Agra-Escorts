@@ -22,32 +22,32 @@ const Rates = () => {
   return (
     <>
       <Helmet>
-        <title>Rates | Areocity Escorts</title>
+        <title>Rates | Agra Escorts</title>
 
         <meta name="description" content="View our pricing plans and service packages. Choose the option that best fits your needs." />
-        <meta name="keywords" content="Call girls in delhi, Escorts service in delhi, Call girls in aerocity delhi, Escorts service in aerocity Delhi" />
+        <meta name="keywords" content="Call girls in Agra, Call girls in fatehabad road Agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        {/* <link rel="canonical" href="https://yourdomain.com/rates" /> */}
+        <link rel="canonical" href="https://www.agraescorts.pro/rates" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Rates | Areocity Escorts" />
+        <meta property="og:title" content="Rates | Agra Escorts" />
         <meta property="og:description" content="Explore our pricing plans and service packages." />
-        {/* <meta property="og:url" content="https://yourdomain.com/rates" /> */}
+        <meta property="og:url" content="https://www.agraescorts.pro/rates" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Rates | Areocity Escorts" />
+        <meta name="twitter:title" content="Rates | Agra Escorts" />
         <meta name="twitter:description" content="Browse our pricing plans and packages." />
 
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "EntertainmentBusiness",
-            name: "Aerocity Escorts",
-            // url: "https://yourdomain.com",
+            name: "Agra Escorts",
+            url: "https://www.agraescorts.pro",
             address: {
               "@type": "PostalAddress",
-              addressLocality: "Aerocity",
-              addressRegion: "Delhi",
+              addressLocality: "Agra",
+              addressRegion: "Uttar Pradesh",
               addressCountry: "IN"
             }
           })}

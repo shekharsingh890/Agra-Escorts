@@ -20,32 +20,33 @@ const PrivacyPolicy = () => {
   return (
     <>
       <Helmet>
-        <title>Privacy Policy | Aerocity Escorts</title>
+        <title>Privacy Policy | Agra Escorts</title>
+
         <meta name="description" content="Read our Privacy Policy to understand how we collect, use, store, and protect your personal information when you use our website." />
-        <meta name="keywords" content="Call girls in delhi, Escorts service in delhi, Call girls in aerocity delhi, Escorts service in aerocity Delhi" />
+        <meta name="keywords" content="Call girls in Agra, Call girls in fatehabad road Agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        {/* <link rel="canonical" href="https://yourdomain.com/privacy-policy" /> */}
+        <link rel="canonical" href="https://www.agraescorts.pro/privacy-policy" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Privacy Policy | Aerocity Escorts" />
+        <meta property="og:title" content="Privacy Policy | Agra Escorts" />
         <meta property="og:description" content="Learn how we collect, use, and protect your personal information through our Privacy Policy." />
-        {/* <meta property="og:url" content="https://yourdomain.com/privacy-policy" /> */}
+        <meta property="og:url" content="https://www.agraescorts.pro/privacy-policy" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Privacy Policy | Aerocity Escorts" />
+        <meta name="twitter:title" content="Privacy Policy | Agra Escorts" />
         <meta name="twitter:description" content="Read our Privacy Policy to learn how your information is handled and protected." />
 
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "EntertainmentBusiness",
-            name: "Aerocity Escorts",
-            // url: "https://yourdomain.com",
-            // telephone: "+91 9999999999",
+            name: "Agra Escorts",
+            url: "https://www.agraescorts.pro",
+            telephone: "+91 9762933940",
             address: {
               "@type": "PostalAddress",
-              addressLocality: "Aerocity",
-              addressRegion: "Delhi",
+              addressLocality: "Agra",
+              addressRegion: "Uttar Pradesh",
               addressCountry: "IN"
             }
           })}

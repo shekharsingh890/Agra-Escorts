@@ -10,7 +10,7 @@ const terms = [
   { title: "Payments", desc: "Payment terms are confirmed at booking. Accepted methods include cash, UPI, secure bank transfer and select international options. Deposits may be required for extended engagements." },
   { title: "Cancellations", desc: "Cancellations made more than 24 hours in advance incur no fee. Cancellations within 24 hours may forfeit any deposit paid. No-shows are charged in full." },
   { title: "Privacy", desc: "We maintain strict confidentiality. Clients are similarly expected to respect the privacy of companions and any information shared during engagements." },
-  { title: "Intellectual Property", desc: "All content on this website — images, text, design, and marks — is the property of Aerocity Escorts and may not be reproduced without written permission." },
+  { title: "Intellectual Property", desc: "All content on this website — images, text, design, and marks — is the property of Agra Escorts and may not be reproduced without written permission." },
   { title: "Contact", desc: "For any questions regarding these terms, please contact +91 9762933940." },
 ]
 
@@ -20,32 +20,33 @@ const TermsAndConditions = () => {
   return (
     <>
       <Helmet>
-        <title>Terms & Conditions | Aerocity Escorts</title>
+        <title>Terms & Conditions | Agra Escorts</title>
+
         <meta name="description" content="Read our Terms & Conditions to understand the rules, responsibilities, and legal terms governing the use of our website and services." />
-        <meta name="keywords" content="Call girls in delhi, Escorts service in delhi, Call girls in aerocity delhi, Escorts service in aerocity Delhi" />
+        <meta name="keywords" content="Call girls in Agra, Call girls in fatehabad road Agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        {/* <link rel="canonical" href="https://yourdomain.com/terms-and-conditions" /> */}
+        <link rel="canonical" href="https://www.agraescorts.pro/terms-and-conditions" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Terms & Conditions | Aerocity Escorts" />
+        <meta property="og:title" content="Terms & Conditions | Agra Escorts" />
         <meta property="og:description" content="Review the Terms & Conditions that govern the use of our website and services." />
-        {/* <meta property="og:url" content="https://yourdomain.com/terms-and-conditions" /> */}
+        <meta property="og:url" content="https://www.agraescorts.pro/terms-and-conditions" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Terms & Conditions | Aerocity Escorts" />
+        <meta name="twitter:title" content="Terms & Conditions | Agra Escorts" />
         <meta name="twitter:description" content="Read our Terms & Conditions to understand the rules and policies for using our website." />
 
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "EntertainmentBusiness",
-            name: "Aerocity Escorts",
-            // url: "https://yourdomain.com",
-            // telephone: "+91 9999999999",
+            name: "Agra Escorts",
+            url: "https://www.agraescorts.pro",
+            telephone: "+91 9762933940",
             address: {
               "@type": "PostalAddress",
-              addressLocality: "Aerocity",
-              addressRegion: "Delhi",
+              addressLocality: "Agra",
+              addressRegion: "Uttar Pradesh",
               addressCountry: "IN"
             }
           })}
