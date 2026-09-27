@@ -149,8 +149,8 @@ const Contact = () => {
 
             <div className="grid md:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1">
-                <label className="w-fit text-xs font-medium uppercase tracking-widest text-[#f1ba4b]">Full Name *</label>
-                <input type="text" className="rounded-xl border border-[#f1ba4b]/30 bg-[#080705] px-4 py-3 outline-none transition focus:border-[#f1ba4b]/80"
+                <label htmlFor="name" className="w-fit text-xs font-medium uppercase tracking-widest text-[#f1ba4b]">Full Name *</label>
+                <input type="text" id="name" className="rounded-xl border border-[#f1ba4b]/30 bg-[#080705] px-4 py-3 outline-none transition focus:border-[#f1ba4b]/80"
                   {...register("name", {
                     required: "Full name is required",
                   })}
@@ -158,8 +158,8 @@ const Contact = () => {
                 {errors.name && (<p className="text-xs text-red-500">{errors.name.message}</p>)}
               </div>
               <div className="flex flex-col gap-1">
-                <label className="w-fit text-xs font-medium uppercase tracking-widest text-[#f1ba4b]">Phone Number *</label>
-                <input type="tel" className="rounded-xl border border-[#f1ba4b]/30 bg-[#080705] px-4 py-3 outline-none transition focus:border-[#f1ba4b]/80"
+                <label htmlFor="phone" className="w-fit text-xs font-medium uppercase tracking-widest text-[#f1ba4b]">Phone Number *</label>
+                <input type="tel" id="phone" className="rounded-xl border border-[#f1ba4b]/30 bg-[#080705] px-4 py-3 outline-none transition focus:border-[#f1ba4b]/80"
                   {...register("phone", {
                     required: "Phone number is required",
                     pattern: {
@@ -174,14 +174,14 @@ const Contact = () => {
 
             <div className="grid md:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1">
-                <label className="w-fit text-xs font-medium uppercase tracking-widest text-[#f1ba4b]">Service</label>
-                <input type="text" className="rounded-xl border border-[#f1ba4b]/30 bg-[#080705] px-4 py-3 outline-none transition focus:border-[#f1ba4b]/80"
+                <label htmlFor="service" className="w-fit text-xs font-medium uppercase tracking-widest text-[#f1ba4b]">Service</label>
+                <input type="text" id="service" className="rounded-xl border border-[#f1ba4b]/30 bg-[#080705] px-4 py-3 outline-none transition focus:border-[#f1ba4b]/80"
                   {...register("service")}
                 />
               </div>
               <div className="flex flex-col gap-1">
-                <label className="w-fit text-xs font-medium uppercase tracking-widest text-[#f1ba4b]">Preferred Date</label>
-                <input type="date" className="rounded-xl border border-[#f1ba4b]/30 bg-[#080705] px-4 py-3 outline-none transition focus:border-[#f1ba4b]/80"
+                <label htmlFor="date" className="w-fit text-xs font-medium uppercase tracking-widest text-[#f1ba4b]">Preferred Date</label>
+                <input type="date" id="date" className="rounded-xl border border-[#f1ba4b]/30 bg-[#080705] px-4 py-3 outline-none transition focus:border-[#f1ba4b]/80"
                   {...register("date")}
                 />
               </div>
