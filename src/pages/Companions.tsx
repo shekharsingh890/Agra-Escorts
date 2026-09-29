@@ -7,6 +7,7 @@ const Profile = lazy(()=>import('../section/Profile'))
 
 const AVAILABILITY = ["All", "24/7", "Evenings", "By Appointment"];
 const AGE = ["All", "18-21", "22-25", "26-29", "30+"];
+const CITY = ["All", "Agra", "Delhi", "Gurgaon", "Noida"];
 
 const profiles = [
   {
@@ -27,7 +28,7 @@ const profiles = [
     image: Icons.profile2,
     name: "Priya",
     age: 28,
-    city: "Agra",
+    city: "Delhi",
     height: "5'5\"",
     languages: "Hindi, English",
     availability: "Evenings",
@@ -53,7 +54,7 @@ const profiles = [
     image: Icons.profile4,
     name: "Neha",
     age: 30,
-    city: "Agra",
+    city: "Gurgaon",
     height: "5'6\"",
     languages: "Hindi",
     availability: "24/7",
@@ -79,7 +80,7 @@ const profiles = [
     image: Icons.profile6,
     name: "Kavya",
     age: 32,
-    city: "Agra",
+    city: "Noida",
     height: "5'5\"",
     languages: "Hindi, English",
     availability: "By Appointment",
@@ -105,7 +106,7 @@ const profiles = [
     image: Icons.profile8,
     name: "Ishita",
     age: 25,
-    city: "Agra",
+    city: "Delhi",
     height: "5'6\"",
     languages: "Hindi",
     availability: "By Appointment",
@@ -131,7 +132,7 @@ const profiles = [
     image: Icons.profile10,
     name: "Nisha",
     age: 35,
-    city: "Agra",
+    city: "Gurgaon",
     height: "5'5\"",
     languages: "Hindi, English",
     availability: "Evenings",
@@ -142,9 +143,10 @@ const profiles = [
 ];
 
 const Companions = () => {
-  const [availability, setAvailability] = useState("All");
-  const [age, setAge] = useState("All");
-  const [vip, setVip] = useState(false);
+  const [availability, setAvailability] = useState<string>("All");
+  const [age, setAge] = useState<string>("All");
+  const [city, setCity] = useState<string>("All");
+  const [vip, setVip] = useState<boolean>(false);
 
   const filtered = profiles.filter((p) => {
     const availabilityMatch = availability === "All" || p.availability === availability;
@@ -156,9 +158,11 @@ const Companions = () => {
       (age === "26-29" && p.age >= 26 && p.age <= 29) ||
       (age === "30+" && p.age >= 30);
 
+    const cityMatch = city === "All" || p.city === city;
+
     const vipMatch = !vip || p.tags.includes("VIP");
 
-    return availabilityMatch && ageMatch && vipMatch;
+    return availabilityMatch && ageMatch && cityMatch && vipMatch;
   });
 
   return (
@@ -197,7 +201,7 @@ const Companions = () => {
 
       <Hero badge="Our companions" title1="" title2="Elite" title3="profiles" description="Each companion is personally verified and interviewed by our concierge team." />
 
-      <section className="flex items-end gap-4 mx-auto max-w-5xl rounded-3xl bg-[#13100d] border border-[#f1ba4b]/30 p-8 mt-12 md:mt-24">
+      <section className="flex flex-wrap items-end gap-4 mx-auto max-w-5xl rounded-3xl bg-[#13100d] border border-[#f1ba4b]/30 p-8 mt-12 md:mt-24">
         <div className='flex flex-col gap-2'>
           <label htmlFor="age" className='text-xs uppercase tracking-widest text-[#f1ba4b]'>Age</label>
           <select name="age" id="age" value={age} onChange={(e)=>setAge(e.target.value)} className="rounded-xl border border-[#f1ba4b]/30 bg-[#13100d]/80 px-4 py-2 text-sm outline-none transition-all duration-300 focus:border-[#f1ba4b] focus:ring-2 focus:ring-[#13100d]/20">
@@ -211,6 +215,15 @@ const Companions = () => {
           <label htmlFor="age" className='text-xs uppercase tracking-widest text-[#f1ba4b]'>Availability</label>
           <select name="age" id="age" value={availability} onChange={(e)=>setAvailability(e.target.value)} className="rounded-xl border border-[#f1ba4b]/30 bg-[#13100d]/80 px-4 py-2 text-sm outline-none transition-all duration-300 focus:border-[#f1ba4b] focus:ring-2 focus:ring-[#13100d]/20">
             {AVAILABILITY.map((item) => (
+              <option key={item} value={item}>{item}</option>
+            ))}
+          </select>
+        </div>
+
+        <div className='flex flex-col gap-2'>
+          <label htmlFor="city" className='text-xs uppercase tracking-widest text-[#f1ba4b]'>City</label>
+          <select name="city" id="city" value={city} onChange={(e)=>setCity(e.target.value)} className="rounded-xl border border-[#f1ba4b]/30 bg-[#13100d]/80 px-4 py-2 text-sm outline-none transition-all duration-300 focus:border-[#f1ba4b] focus:ring-2 focus:ring-[#13100d]/20">
+            {CITY.map((item) => (
               <option key={item} value={item}>{item}</option>
             ))}
           </select>
