@@ -1,7 +1,10 @@
-import { lazy } from "react";
+import { lazy, useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase/Firebase";
 import About from '../assets/about-us.jpg'
 import { NavLink } from 'react-router-dom';
 import { Helmet } from "react-helmet-async";
+import type { ContactDetails } from "../components/SocialLinks";
 
 const Hero = lazy(()=>import('../section/Hero'))
 
@@ -13,6 +16,27 @@ const pillars = [
 ];
 
 const AboutUs = () => {
+  const [contacts, setContacts] = useState<ContactDetails | null>(null);
+      
+  useEffect(() => {
+    const fetchContacts = async () => {
+      try {
+        const snapshot = await getDocs(collection(db, "contact"));
+
+        if (!snapshot.empty) {
+          const data = snapshot.docs[0].data() as ContactDetails;
+          setContacts(data);
+        }
+      } catch (error) {
+        console.error("Error fetching contact details:", error);
+      }
+    };
+
+    fetchContacts();
+  }, []);
+
+  if (!contacts) return null;
+
   return (
     <>
       <Helmet>
@@ -44,7 +68,7 @@ const AboutUs = () => {
               addressRegion: "Uttar Pradesh",
               addressCountry: "IN"
             },
-            telephone: "+91 9762933940"
+            telephone: `+91 ${contacts.Phone1}`
           })}
         </script>
       </Helmet>

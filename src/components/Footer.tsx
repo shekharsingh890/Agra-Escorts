@@ -1,4 +1,8 @@
+import { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase/Firebase";
 import { NavLink } from "react-router-dom";
+import type { ContactDetails } from "./SocialLinks";
 
 const navItems = [
   { label: "Home", to: "/" },
@@ -9,6 +13,27 @@ const navItems = [
 ];
 
 const Footer = () => {
+  const [contacts, setContacts] = useState<ContactDetails | null>(null);
+  
+  useEffect(() => {
+    const fetchContacts = async () => {
+      try {
+        const snapshot = await getDocs(collection(db, "contact"));
+
+        if (!snapshot.empty) {
+          const data = snapshot.docs[0].data() as ContactDetails;
+          setContacts(data);
+        }
+      } catch (error) {
+        console.error("Error fetching contact details:", error);
+      }
+    };
+
+    fetchContacts();
+  }, []);
+
+  if (!contacts) return null;
+
   return (
     <footer className="border-t border-[#f1ba4b]/30 bg-[#090707]">
       <div className="p-8 md:p-12 lg:p-16 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12 lg:gap-16">
@@ -48,8 +73,8 @@ const Footer = () => {
           <div className="flex flex-col gap-2 opacity-70 break-all">
             <span>Agra, Uttar Pradesh</span>
             <span>Available 24 / 7</span>
-            <a href="tel:+919762933940">+91 9762933940</a>
-            <a href="tel:+919762933940">+91 6387201873</a>
+            <a href={`tel:+${91}${contacts.Phone1}`}>+91 {contacts.Phone1}</a>
+            <a href={`tel:+${91}${contacts.Phone2}`}>+91 {contacts.Phone2}</a>
           </div>
         </div>
       </div>

@@ -1,4 +1,6 @@
-import { lazy, useState } from "react";
+import { lazy, useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase/Firebase";
 import { Phone, MessageCircle } from "lucide-react"
 import { toast } from "react-toastify";
 import { signInWithPopup } from "firebase/auth";
@@ -7,6 +9,7 @@ import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
 import { ClipLoader } from "react-spinners";
 import { Helmet } from "react-helmet-async";
+import type { ContactDetails } from "../components/SocialLinks";
 
 const Hero = lazy(()=>import("../section/Hero"));
 const Faqs = lazy(()=>import("../section/Faqs"));
@@ -19,66 +22,87 @@ type FormData = {
   message: string;
 }
 
-const contactInfo = [
-  {
-    icon: MessageCircle,
-    title: "WhatsApp",
-    value: "Chat instantly",
-    link: "https://wa.me/919762933940",
-  },
-  {
-    icon: Phone,
-    title: "Call Us",
-    value: "+91 9762933940",
-    link: "tel:+919762933940"
-  },
-  {
-    icon: Phone,
-    title: "Call Us",
-    value: "+91 6387201873",
-    link: "tel:+916387201873"
-  }
-]
-
-const faqs = [
-  {
-    q: "How can I book Agra Escorts?",
-    a: "You can book by calling or WhatsApp on +91 9762933940. Just tell us your preferred time, hotel name, and girl choice. Booking confirmed within 5-10 minutes."
-  },
-  {
-    q: "How quickly can you arrange a booking?",
-    a: "Same-hour bookings are usually possible for our regular clientele. Standard notice is 2 hours."
-  },
-  {
-    q: "Do you provide real photos and verified girls?",
-    a: "Yes, all our girls are 100% verified with recent genuine photos. We never use fake or stolen images."
-  },
-  {
-    q: "What areas do you cover?",
-    a: "All of Agra and travel worldwide on request."
-  },
-  {
-    q: "Is complete privacy guaranteed?",
-    a: "100% Privacy Guaranteed. We maintain full confidentiality. No details are shared with anyone. Your identity is completely safe."
-  },
-  {
-    q: "What is the difference between Incall and Outcall?",
-    a: "Incall: You visit our girl's place (mostly 5-star hotels in Agra). Outcall: Girl comes to your hotel or residence."
-  },
-  {
-    q: "Do you have Russian and Foreign Escorts?",
-    a: "Yes, we have beautiful Russian, Ukrainian, and other foreign escorts available regularly in Agra."
-  },
-  {
-    q: "What if I want to cancel the booking?",
-    a: "You can cancel 2 hours before the meeting without any charge. Last minute cancellation may have 50% charge."
-  },
-];
-
 const Contact = () => {
   const [loading, setLoading] = useState<boolean>(false);
   
   const { register, handleSubmit, reset, formState: { errors } } = useForm<FormData>();
+
+  const [contacts, setContacts] = useState<ContactDetails | null>(null);
+    
+  useEffect(() => {
+    const fetchContacts = async () => {
+      try {
+        const snapshot = await getDocs(collection(db, "contact"));
+
+        if (!snapshot.empty) {
+          const data = snapshot.docs[0].data() as ContactDetails;
+          setContacts(data);
+        }
+      } catch (error) {
+        console.error("Error fetching contact details:", error);
+      }
+    };
+
+    fetchContacts();
+  }, []);
+
+  if (!contacts) return null;
+
+  const contactInfo = [
+    {
+      icon: MessageCircle,
+      title: "WhatsApp",
+      value: "Chat instantly",
+      link: `https://wa.me/${91}${contacts.Whatsapp1}`,
+    },
+    {
+      icon: Phone,
+      title: "Call Us",
+      value: `+91 ${contacts.Phone1}`,
+      link: `tel:+${91}${contacts.Phone1}`
+    },
+    {
+      icon: Phone,
+      title: "Call Us",
+      value: `+91 ${contacts.Phone2}`,
+      link: `tel:+${91}${contacts.Phone2}`
+    }
+  ]
+
+  const faqs = [
+    {
+      q: "How can I book Agra Escorts?",
+      a: `You can book by calling or WhatsApp on +91 ${contacts.Whatsapp1}. Just tell us your preferred time, hotel name, and girl choice. Booking confirmed within 5-10 minutes.`
+    },
+    {
+      q: "How quickly can you arrange a booking?",
+      a: "Same-hour bookings are usually possible for our regular clientele. Standard notice is 2 hours."
+    },
+    {
+      q: "Do you provide real photos and verified girls?",
+      a: "Yes, all our girls are 100% verified with recent genuine photos. We never use fake or stolen images."
+    },
+    {
+      q: "What areas do you cover?",
+      a: "All of Agra and travel worldwide on request."
+    },
+    {
+      q: "Is complete privacy guaranteed?",
+      a: "100% Privacy Guaranteed. We maintain full confidentiality. No details are shared with anyone. Your identity is completely safe."
+    },
+    {
+      q: "What is the difference between Incall and Outcall?",
+      a: "Incall: You visit our girl's place (mostly 5-star hotels in Agra). Outcall: Girl comes to your hotel or residence."
+    },
+    {
+      q: "Do you have Russian and Foreign Escorts?",
+      a: "Yes, we have beautiful Russian, Ukrainian, and other foreign escorts available regularly in Agra."
+    },
+    {
+      q: "What if I want to cancel the booking?",
+      a: "You can cancel 2 hours before the meeting without any charge. Last minute cancellation may have 50% charge."
+    },
+  ];
 
   const onSubmit = async (data: FormData) => {
     try {
@@ -134,7 +158,7 @@ const Contact = () => {
             "@type": "EntertainmentBusiness",
             name: "Agra Escorts",
             url: "https://www.agraescorts.pro",
-            telephone: "+91 9762933940",
+            telephone: `+91 ${contacts.Phone1}`,
             address: {
               "@type": "PostalAddress",
               addressLocality: "Agra",

@@ -1,21 +1,45 @@
-import { lazy } from "react";
+import { lazy, useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase/Firebase";
 import { Helmet } from "react-helmet-async";
+import type { ContactDetails } from "../components/SocialLinks";
 
 const Hero = lazy(()=>import('../section/Hero'))
 
-const policies = [
-  { title: "Information Collection", desc: "We collect only the information you voluntarily provide through our contact forms, phone calls or messaging channels — typically name, phone number, email, preferred date and service enquiry details. We do not collect sensitive personal data beyond what is necessary to arrange your booking." },
-  { title: "Cookies", desc: "Our website uses minimal, non-tracking cookies solely to remember basic preferences and to ensure the site functions correctly. We do not use advertising or third-party tracking cookies." },
-  { title: "Contact Forms", desc: "Information submitted via contact forms is transmitted securely and stored only for the duration required to fulfil your enquiry. Details are never sold, shared or used for marketing communications." },
-  { title: "Data Usage", desc: "Personal information is used exclusively to respond to your enquiry, arrange bookings, and provide the requested companionship service. We do not use your data for any secondary purpose." },
-  { title: "Security", desc: "We employ industry-standard security practices, including encrypted communications and restricted internal access, to protect any information shared with us." },
-  { title: "Third Parties", desc: "We do not share client information with third parties except where strictly required by law. Payment providers process transactions under their own privacy terms." },
-  { title: "User Rights", desc: "You may at any time request access to, correction of, or deletion of your personal information by contacting our concierge team. Requests are processed within 30 days." },
-  { title: "Contact Information", desc: "For any privacy-related questions or requests, please contact +91 9762933940." },
-];
-
 const PrivacyPolicy = () => {
   const currentYear = new Date().getFullYear();
+
+  const [contacts, setContacts] = useState<ContactDetails | null>(null);
+        
+  useEffect(() => {
+    const fetchContacts = async () => {
+      try {
+        const snapshot = await getDocs(collection(db, "contact"));
+
+        if (!snapshot.empty) {
+          const data = snapshot.docs[0].data() as ContactDetails;
+          setContacts(data);
+        }
+      } catch (error) {
+        console.error("Error fetching contact details:", error);
+      }
+    };
+
+    fetchContacts();
+  }, []);
+
+  if (!contacts) return null;
+
+  const policies = [
+    { title: "Information Collection", desc: "We collect only the information you voluntarily provide through our contact forms, phone calls or messaging channels — typically name, phone number, email, preferred date and service enquiry details. We do not collect sensitive personal data beyond what is necessary to arrange your booking." },
+    { title: "Cookies", desc: "Our website uses minimal, non-tracking cookies solely to remember basic preferences and to ensure the site functions correctly. We do not use advertising or third-party tracking cookies." },
+    { title: "Contact Forms", desc: "Information submitted via contact forms is transmitted securely and stored only for the duration required to fulfil your enquiry. Details are never sold, shared or used for marketing communications." },
+    { title: "Data Usage", desc: "Personal information is used exclusively to respond to your enquiry, arrange bookings, and provide the requested companionship service. We do not use your data for any secondary purpose." },
+    { title: "Security", desc: "We employ industry-standard security practices, including encrypted communications and restricted internal access, to protect any information shared with us." },
+    { title: "Third Parties", desc: "We do not share client information with third parties except where strictly required by law. Payment providers process transactions under their own privacy terms." },
+    { title: "User Rights", desc: "You may at any time request access to, correction of, or deletion of your personal information by contacting our concierge team. Requests are processed within 30 days." },
+    { title: "Contact Information", desc: `For any privacy-related questions or requests, please contact +91 ${contacts.Phone1}.` },
+  ];
 
   return (
     <>
@@ -41,7 +65,7 @@ const PrivacyPolicy = () => {
             "@type": "EntertainmentBusiness",
             name: "Agra Escorts",
             url: "https://www.agraescorts.pro",
-            telephone: "+91 9762933940",
+            telephone: `+91 ${contacts.Phone1}`,
             address: {
               "@type": "PostalAddress",
               addressLocality: "Agra",

@@ -2,7 +2,10 @@ import { NavLink } from "react-router-dom"
 import hero from "../assets/hero.jpg"
 import * as Icons from '../assets/companions'
 import { Helmet } from "react-helmet-async"
-import { lazy } from "react"
+import { lazy, useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase/Firebase";
+import type { ContactDetails } from "../components/SocialLinks";
 
 const Hero = lazy(()=>import('../section/Hero'))
 const Profile = lazy(()=>import('../section/Profile'))
@@ -82,14 +85,35 @@ const testimonials = [
   { text: "Meera was beautiful, polite and very professional. One of the best experiences I've had with an escort service in Agra. Booking was quick and hassle-free.", duration: "- 4 days ago" },
 ];
 
-const faqs = [
-  { q: "How can I book Agra Escorts?", a: "You can book by calling or WhatsApp on +91 9762933940. Just tell us your preferred time, hotel name, and girl choice. Booking confirmed within 5-10 minutes." },
-  { q: "Is my privacy protected?", a: "100% Privacy Guaranteed. We maintain full confidentiality. No details are shared with anyone. Your identity is completely safe." },
-  { q: "Do you provide real photos and verified girls?", a: "Yes, all our girls are 100% verified with recent genuine photos. We never use fake or stolen images." },
-  { q: "What payment methods do you accept?", a: "We accept cash, UPI, bank transfer and international payments." },
-];
-
 const Home = () => {
+  const [contacts, setContacts] = useState<ContactDetails | null>(null);
+        
+  useEffect(() => {
+    const fetchContacts = async () => {
+      try {
+        const snapshot = await getDocs(collection(db, "contact"));
+
+        if (!snapshot.empty) {
+          const data = snapshot.docs[0].data() as ContactDetails;
+          setContacts(data);
+        }
+      } catch (error) {
+        console.error("Error fetching contact details:", error);
+      }
+    };
+
+    fetchContacts();
+  }, []);
+
+  if (!contacts) return null;
+
+  const faqs = [
+    { q: "How can I book Agra Escorts?", a: `You can book by calling or WhatsApp on +91 ${contacts.Phone1}. Just tell us your preferred time, hotel name, and girl choice. Booking confirmed within 5-10 minutes.` },
+    { q: "Is my privacy protected?", a: "100% Privacy Guaranteed. We maintain full confidentiality. No details are shared with anyone. Your identity is completely safe." },
+    { q: "Do you provide real photos and verified girls?", a: "Yes, all our girls are 100% verified with recent genuine photos. We never use fake or stolen images." },
+    { q: "What payment methods do you accept?", a: "We accept cash, UPI, bank transfer and international payments." },
+  ];
+
   return (
     <>
       <Helmet>
@@ -122,7 +146,7 @@ const Home = () => {
               addressRegion: "Uttar Pradesh",
               addressCountry: "IN"
             },
-            telephone: "+91 9762933940"
+            telephone: `+91 ${contacts.Phone1}`
           })}
         </script>
       </Helmet>

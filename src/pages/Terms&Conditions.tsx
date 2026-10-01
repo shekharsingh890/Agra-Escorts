@@ -1,21 +1,45 @@
-import { lazy } from "react";
+import { lazy, useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase/Firebase";
 import { Helmet } from "react-helmet-async";
+import type { ContactDetails } from "../components/SocialLinks";
 
 const Hero = lazy(()=>import('../section/Hero'))
 
-const terms = [
-  { title: "Acceptance", desc: "By accessing this website or engaging our services, you confirm you are at least 18 years old and agree to be bound by these terms." },
-  { title: "Booking Policy", desc: "All bookings are subject to companion availability and concierge confirmation. Times and services agreed at booking are final unless mutually varied." },
-  { title: "User Responsibilities", desc: "Clients agree to treat all companions with respect and courtesy, to honour confirmed bookings, and to disclose any information necessary for a safe engagement." },
-  { title: "Payments", desc: "Payment terms are confirmed at booking. Accepted methods include cash, UPI, secure bank transfer and select international options. Deposits may be required for extended engagements." },
-  { title: "Cancellations", desc: "Cancellations made more than 24 hours in advance incur no fee. Cancellations within 24 hours may forfeit any deposit paid. No-shows are charged in full." },
-  { title: "Privacy", desc: "We maintain strict confidentiality. Clients are similarly expected to respect the privacy of companions and any information shared during engagements." },
-  { title: "Intellectual Property", desc: "All content on this website — images, text, design, and marks — is the property of Agra Escorts and may not be reproduced without written permission." },
-  { title: "Contact", desc: "For any questions regarding these terms, please contact +91 9762933940." },
-]
-
 const TermsAndConditions = () => {
   const currentYear = new Date().getFullYear();
+
+  const [contacts, setContacts] = useState<ContactDetails | null>(null);
+        
+  useEffect(() => {
+    const fetchContacts = async () => {
+      try {
+        const snapshot = await getDocs(collection(db, "contact"));
+
+        if (!snapshot.empty) {
+          const data = snapshot.docs[0].data() as ContactDetails;
+          setContacts(data);
+        }
+      } catch (error) {
+        console.error("Error fetching contact details:", error);
+      }
+    };
+
+    fetchContacts();
+  }, []);
+
+  if (!contacts) return null;
+
+  const terms = [
+    { title: "Acceptance", desc: "By accessing this website or engaging our services, you confirm you are at least 18 years old and agree to be bound by these terms." },
+    { title: "Booking Policy", desc: "All bookings are subject to companion availability and concierge confirmation. Times and services agreed at booking are final unless mutually varied." },
+    { title: "User Responsibilities", desc: "Clients agree to treat all companions with respect and courtesy, to honour confirmed bookings, and to disclose any information necessary for a safe engagement." },
+    { title: "Payments", desc: "Payment terms are confirmed at booking. Accepted methods include cash, UPI, secure bank transfer and select international options. Deposits may be required for extended engagements." },
+    { title: "Cancellations", desc: "Cancellations made more than 24 hours in advance incur no fee. Cancellations within 24 hours may forfeit any deposit paid. No-shows are charged in full." },
+    { title: "Privacy", desc: "We maintain strict confidentiality. Clients are similarly expected to respect the privacy of companions and any information shared during engagements." },
+    { title: "Intellectual Property", desc: "All content on this website — images, text, design, and marks — is the property of Agra Escorts and may not be reproduced without written permission." },
+    { title: "Contact", desc: `For any questions regarding these terms, please contact +91 ${contacts.Phone1}.` },
+  ]
 
   return (
     <>
@@ -41,7 +65,7 @@ const TermsAndConditions = () => {
             "@type": "EntertainmentBusiness",
             name: "Agra Escorts",
             url: "https://www.agraescorts.pro",
-            telephone: "+91 9762933940",
+            telephone: `+91 ${contacts.Phone1}`,
             address: {
               "@type": "PostalAddress",
               addressLocality: "Agra",
