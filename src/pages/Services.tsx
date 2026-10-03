@@ -1,8 +1,5 @@
-import { lazy } from "react";
 import { NavLink } from "react-router";
 import { Helmet } from "react-helmet-async";
-
-const Hero = lazy(()=>import("../section/Hero"));
 
 const services = [
   {
@@ -58,12 +55,12 @@ const Services = () => {
         <link rel="canonical" href="https://www.agraescorts.pro/services" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Services | Agra" />
+        <meta property="og:title" content="Agra Escort Service" />
         <meta property="og:description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
         <meta property="og:url" content="https://www.agraescorts.pro/services" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Services | Agra" />
+        <meta name="twitter:title" content="Agra Escort Service" />
         <meta name="twitter:description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
 
         <script type="application/ld+json">
@@ -90,7 +87,11 @@ const Services = () => {
         </script>
       </Helmet>
 
-      <Hero badge="Services" title1="Premium" title2="services" title3="" description="We focus on understanding your preferences to provide a service that feels personal and well organized." />
+      <div className="flex flex-col items-center gap-3 text-center max-w-5xl mx-auto mt-24 lg:mt-36 px-4 lg:px-16">
+        <p className="text-sm font-medium uppercase tracking-widest text-[#f1ba4b]">Services</p>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight leading-[1.02] max-w-4xl">Our Premium <span className="bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] bg-clip-text text-transparent italic">Escort Services</span> <span>in Agra</span></h1>
+        <p className="md:text-lg max-w-2xl font-medium opacity-70">We focus on understanding your preferences to provide a service that feels personal and well organized.</p>
+      </div>
 
       <section className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 py-12 lg:py-24 px-4 lg:px-16">
         {services.map((s) => (

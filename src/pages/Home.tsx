@@ -117,7 +117,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Agra Escorts | Verified Escort Services in Agra</title>
+        <title>Agra Escorts | Escort Services in Agra</title>
 
         <meta name="description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -158,12 +158,12 @@ const Home = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(212,181,76,0.25),transparent_40%)]" />
 
         <div className="flex flex-col gap-8 p-4 mx-auto max-w-5xl text-center z-1">
-          <p className="text-xs uppercase tracking-[0.4em] text-[#f1ba4b] font-serif">Elite Luxury Companionship</p>
+          <p className="text-xs uppercase tracking-[0.4em] text-[#f1ba4b] font-serif">Agra Escort Service</p>
           <h1 className="text-5xl md:text-7xl leading-[1.05] font-serif">
-            Premium{" "}
+            Best{" "}
+            <span className="bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] bg-clip-text italic text-transparent">Escorts{" "}</span>
+            in{" "}
             <span className="bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] bg-clip-text italic text-transparent">Agra</span>
-            <br />
-            Escorts
           </h1>
           <p className="mx-auto max-w-2xl text-lg md:text-xl opacity-80">Luxury Companionship & Elite Escort Services in Fatehabad Road, Agra. Discreet. Verified. Unforgettable.</p>
 

@@ -11,7 +11,6 @@ import { ClipLoader } from "react-spinners";
 import { Helmet } from "react-helmet-async";
 import type { ContactDetails } from "../components/SocialLinks";
 
-const Hero = lazy(()=>import("../section/Hero"));
 const Faqs = lazy(()=>import("../section/Faqs"));
 
 type FormData = {
@@ -138,18 +137,18 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Us | Agra Escort Service</title>
+        <title>Contact Us | Call girl in Agra</title>
 
         <meta name="description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
         <link rel="canonical" href="https://www.agraescorts.pro/contact" />
 
-        <meta property="og:title" content="Contact Us | Agra" />
+        <meta property="og:title" content="Contact Us | Call girl in Agra" />
         <meta property="og:description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
         <meta property="og:url" content="https://www.agraescorts.pro/contact" />
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact Us | Agra" />
+        <meta name="twitter:title" content="Contact Us | Call girl in Agra" />
         <meta name="twitter:description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
 
         <script type="application/ld+json">
@@ -170,7 +169,11 @@ const Contact = () => {
         </script>
       </Helmet>
 
-      <Hero badge="Contact" title1="Reserve your" title2="evening" title3="" description="Our team is available 24/7 and usually replies within a few minutes." />
+      <div className="flex flex-col items-center gap-3 text-center max-w-5xl mx-auto mt-24 lg:mt-36 px-4 lg:px-16">
+        <p className="text-sm font-medium uppercase tracking-widest text-[#f1ba4b]">Contact</p>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight leading-[1.02] max-w-4xl">Agra Escort <span className="bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] bg-clip-text text-transparent italic">Contact Number</span></h1>
+        <p className="md:text-lg max-w-2xl font-medium opacity-70">Our team is available 24/7 and usually replies within a few minutes.</p>
+      </div>
 
       <section className="flex flex-col gap-16 pt-12 lg:pt-24 px-4 lg:px-16">
         <div className="flex flex-col lg:flex-row gap-8">

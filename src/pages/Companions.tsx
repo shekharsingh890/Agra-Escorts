@@ -2,7 +2,6 @@ import * as Icons from '../assets/companions'
 import { lazy, useState } from "react"
 import { Helmet } from 'react-helmet-async'
 
-const Hero = lazy(()=>import('../section/Hero'))
 const Profile = lazy(()=>import('../section/Profile'))
 
 const AVAILABILITY = ["All", "24/7", "Evenings", "By Appointment"];
@@ -168,19 +167,19 @@ const Companions = () => {
   return (
     <>
       <Helmet>
-        <title>Agra Escorts | Agra Escort Service</title>
+        <title>Call Girls in Agra</title>
         <meta name="description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://www.agraescorts.pro/companions" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Agra Companions | Companionship Services in Agra" />
+        <meta property="og:title" content="Call Girls in Agra" />
         <meta property="og:description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
         <meta property="og:url" content="https://www.agraescorts.pro/companions" />
         <meta property="og:site_name" content="Agra Escorts" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Agra Companions | Companionship Services in Agra" />
+        <meta name="twitter:title" content="Call Girls in Agra" />
         <meta name="twitter:description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
 
         <script type="application/ld+json">
@@ -199,7 +198,11 @@ const Companions = () => {
         </script>
       </Helmet>
 
-      <Hero badge="Our companions" title1="" title2="Elite" title3="profiles" description="Each companion is personally verified and interviewed by our concierge team." />
+      <div className="flex flex-col items-center gap-3 text-center max-w-5xl mx-auto mt-24 lg:mt-36 px-4 lg:px-16">
+        <p className="text-sm font-medium uppercase tracking-widest text-[#f1ba4b]">Our companions</p>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight leading-[1.02] max-w-4xl"><span className="bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] bg-clip-text text-transparent italic">Call Girls</span> <span>in Agra</span></h1>
+        <p className="md:text-lg max-w-2xl font-medium opacity-70">Each companion is personally verified and interviewed by our concierge team.</p>
+      </div>
 
       <section className="flex flex-wrap items-end gap-4 mx-auto max-w-5xl rounded-3xl bg-[#13100d] border border-[#f1ba4b]/30 p-8 mt-12 md:mt-24">
         <div className='flex flex-col gap-2'>

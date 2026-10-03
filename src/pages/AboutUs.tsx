@@ -47,12 +47,12 @@ const AboutUs = () => {
         <link rel="canonical" href="https://www.agraescorts.pro/about-us" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="About Us | Agra Escorts" />
+        <meta property="og:title" content="About Us | Agra Escort Service" />
         <meta property="og:description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
         <meta property="og:url" content="https://www.agraescorts.pro/about-us" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About Us | Agra Escorts" />
+        <meta name="twitter:title" content="About Us | Agra Escort Service" />
         <meta name="twitter:description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
 
         <script type="application/ld+json">
@@ -73,7 +73,11 @@ const AboutUs = () => {
         </script>
       </Helmet>
 
-      <Hero badge="About" title1="The" title2="Agra Escorts" title3="story" description="Discover our journey, our commitment to quality, and our focus on delivering a trusted and professional experience for every customer." />
+      <div className="flex flex-col items-center gap-3 text-center max-w-5xl mx-auto mt-24 lg:mt-36 px-4 lg:px-16">
+        <p className="text-sm font-medium uppercase tracking-widest text-[#f1ba4b]">About</p>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight leading-[1.02] max-w-4xl">Agra's Most <span className="bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] bg-clip-text text-transparent italic">Elite Escort</span> <span>Agency</span></h1>
+        <p className="md:text-lg max-w-2xl font-medium opacity-70">Discover our journey, our commitment to quality, and our focus on delivering a trusted and professional experience for every customer.</p>
+      </div>
 
       <section className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-16 pt-12 lg:pt-24 px-4 lg:px-16">
         <div className="overflow-hidden rounded-3xl border border-[#f1ba4b]/30 transition duration-300 hover:-translate-y-1 hover:border-[#f1ba4b]/80">

@@ -22,19 +22,19 @@ const Rates = () => {
   return (
     <>
       <Helmet>
-        <title>Rates | Agra Escort Service</title>
+        <title>Rates | Call girl in Agra</title>
 
         <meta name="description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://www.agraescorts.pro/rates" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Rates | Agra Escorts" />
+        <meta property="og:title" content="Rates | Call girl in Agra" />
         <meta property="og:description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
         <meta property="og:url" content="https://www.agraescorts.pro/rates" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Rates | Agra Escorts" />
+        <meta name="twitter:title" content="Rates | Call girl in Agra" />
         <meta name="twitter:description" content="Agra escort service, Call girl in agra, Call girl in fatehabad road agra, Escorts service in Agra, Escorts service in fatehabad road Agra" />
 
         <script type="application/ld+json">
@@ -53,7 +53,10 @@ const Rates = () => {
         </script>
       </Helmet>
 
-      <Hero badge="Investment" title1="Transparent" title2="packages" title3="" description="Every package reflects our commitment to five-star service. Custom arrangements available on request." />
+      <div className="flex flex-col items-center gap-3 text-center max-w-5xl mx-auto mt-24 lg:mt-36 px-4 lg:px-16">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight leading-[1.02] max-w-4xl">Agra Escort <span className="bg-[linear-gradient(135deg,#f7db98,#de9300,#a35e16)] bg-clip-text text-transparent italic">Rates & Packages</span></h1>
+        <p className="md:text-lg max-w-2xl font-medium opacity-70">Every package reflects our commitment to five-star service. Custom arrangements available on request.</p>
+      </div>
 
       <section className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6 pt-12 lg:pt-24 px-4 lg:px-16">
         {packages.map((p) => (
